@@ -37,7 +37,7 @@ export default function GaleriePage() {
       <section className="pt-32 pb-16 bg-tiki-dark-2 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-tiki-red/10 to-transparent" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="badge mb-4 inline-block">Photos & Vidéos</div>
+
           <h1 className="section-title mb-4">Notre galerie</h1>
           <p className="section-subtitle max-w-2xl mx-auto">
             Les plus belles images de nos excursions — îlets, snorkeling, repas créole, coucher de soleil.

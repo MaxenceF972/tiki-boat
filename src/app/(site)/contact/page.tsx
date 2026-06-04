@@ -14,7 +14,7 @@ export default function ContactPage() {
       <section className="pt-32 pb-16 bg-tiki-dark-2 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-tiki-red/10 to-transparent" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="badge mb-4 inline-block">On est là pour vous</div>
+
           <h1 className="section-title mb-4">Contactez-nous</h1>
           <p className="section-subtitle max-w-xl mx-auto">
             Une question, une demande de privatisation ou juste envie d&apos;en savoir plus ? On répond rapidement !
