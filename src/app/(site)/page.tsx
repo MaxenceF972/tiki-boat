@@ -290,8 +290,8 @@ export default async function HomePage() {
             </h2>
             <div className="flex items-center justify-center gap-1 mb-2">
               {[...Array(5)].map((_, i) => <Star key={i} size={18} className="text-tiki-gold fill-tiki-gold" />)}
-              <span className="ml-2 font-bold text-white">4.8</span>
-              <span className="text-white/35 text-sm ml-1">/ 5 · 400+ avis</span>
+              <span className="ml-2 font-bold text-white">4.9</span>
+              <span className="text-white/35 text-sm ml-1">/ 5 · 600+ avis</span>
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
