@@ -114,15 +114,15 @@ export default async function HomePage() {
               Une expérience pensée dans les moindres détails
             </h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-5">
             {FEATURES.map(({ icon: Icon, label, desc }) => (
-              <div key={label} className="flex items-start gap-4 p-5 sm:p-6 rounded-2xl bg-white/4 hover:bg-white/7 transition-all duration-300 group">
-                <div className="w-12 h-12 rounded-xl bg-tiki-gold/15 flex items-center justify-center group-hover:bg-tiki-gold/25 transition-colors shrink-0">
-                  <Icon size={22} className="text-tiki-gold" />
+              <div key={label} className="flex flex-col items-start gap-2.5 p-4 sm:p-5 rounded-2xl border border-white/8 hover:border-tiki-gold/40 hover:bg-white/5 transition-all duration-300 group">
+                <div className="w-11 h-11 rounded-xl bg-tiki-gold/15 flex items-center justify-center group-hover:bg-tiki-gold/25 transition-colors">
+                  <Icon size={20} className="text-tiki-gold" />
                 </div>
-                <div className="pt-0.5">
-                  <div className="font-bold text-white text-sm mb-1">{label}</div>
-                  <div className="text-white/50 text-sm leading-relaxed">{desc}</div>
+                <div>
+                  <div className="font-bold text-white text-sm mb-0.5">{label}</div>
+                  <div className="text-white/45 text-xs leading-relaxed">{desc}</div>
                 </div>
               </div>
             ))}
