@@ -19,20 +19,25 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-tiki-ocean border-b border-white/8 shadow-lg shadow-black/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
-        {/* Mobile: grille 3 colonnes pour centrer le logo — Desktop: flex normal */}
+        {/* Mobile: burger gauche · logo centre · réserver droite */}
         <div className="grid grid-cols-[1fr_auto_1fr] md:flex md:items-center md:justify-between h-16 sm:h-[68px] items-center">
 
-          {/* Spacer gauche mobile (équilibre le burger à droite) */}
-          <div className="md:hidden" />
+          {/* GAUCHE — burger mobile / logo desktop */}
+          <div className="flex items-center">
+            <button onClick={() => setIsOpen(!isOpen)} aria-label="Menu"
+              className="md:hidden flex items-center justify-center w-11 h-11 rounded-full border border-white/20 text-white hover:border-tiki-gold hover:text-tiki-gold transition-all duration-200 shrink-0">
+              {isOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
+            <Link href="/" className="hidden md:block shrink-0">
+              <Image src="/logo.png" alt="Tiki Boat" width={160} height={54}
+                className="h-10 sm:h-12 w-auto object-contain" priority />
+            </Link>
+          </div>
 
-          {/* Logo — centré sur mobile, gauche sur desktop */}
-          <Link href="/" className="shrink-0">
-            <Image
-              src="/logo.png" alt="Tiki Boat"
-              width={160} height={54}
-              className="h-10 sm:h-12 w-auto object-contain"
-              priority
-            />
+          {/* CENTRE — logo mobile uniquement */}
+          <Link href="/" className="md:hidden shrink-0">
+            <Image src="/logo.png" alt="Tiki Boat" width={160} height={54}
+              className="h-10 w-auto object-contain" priority />
           </Link>
 
           {/* Nav centré — desktop uniquement */}
@@ -46,26 +51,17 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Droite — tel + réserver (desktop) + burger (mobile) */}
-          <div className="flex items-center gap-2 sm:gap-3">
-            {/* Téléphone — desktop */}
+          {/* DROITE — réserver (toujours) + tel (desktop) */}
+          <div className="flex items-center justify-end gap-2 sm:gap-3">
             <a href="tel:+590690495848"
               className="hidden lg:flex items-center gap-1.5 text-white/60 hover:text-white text-sm transition-colors">
               <Phone size={13} className="text-tiki-gold" />
               <span>0690 49 58 48</span>
             </a>
-
-            {/* Réserver — toujours visible */}
             <Link href="/reservation"
               className="inline-flex items-center bg-tiki-gold hover:bg-tiki-gold-dark text-tiki-ocean text-xs sm:text-sm font-bold py-2 px-3 sm:px-5 rounded-full transition-all duration-200 whitespace-nowrap min-h-[36px]">
               Réserver
             </Link>
-
-            {/* Burger — mobile uniquement */}
-            <button onClick={() => setIsOpen(!isOpen)} aria-label="Menu"
-              className="md:hidden flex items-center justify-center w-11 h-11 rounded-full border border-white/20 text-white hover:border-tiki-gold hover:text-tiki-gold transition-all duration-200 shrink-0">
-              {isOpen ? <X size={20} /> : <Menu size={20} />}
-            </button>
           </div>
         </div>
       </div>

@@ -68,7 +68,7 @@ export default async function HomePage() {
               {[
                 { v: "4.9 ★", l: "Note Google" },
                 { v: "500+", l: "Clients satisfaits" },
-                { v: "Depuis 2018", l: "En Guadeloupe" },
+                { v: "2018", l: "En Guadeloupe" },
               ].map(({ v, l }) => (
                 <div key={l}>
                   <div className="text-white font-bold text-xl">{v}</div>
@@ -78,9 +78,9 @@ export default async function HomePage() {
             </div>
           </div>
 
-          {/* DROITE — Photo */}
-          <div className="order-2">
-            <div className="relative rounded-2xl overflow-hidden aspect-[4/3] sm:aspect-[4/3] lg:aspect-[4/5] max-h-[520px] shadow-2xl shadow-black/40">
+          {/* DROITE — Photo (masqué sur mobile) */}
+          <div className="order-2 hidden lg:block">
+            <div className="relative rounded-2xl overflow-hidden aspect-[4/3] lg:aspect-[4/5] max-h-[520px] shadow-2xl shadow-black/40">
               <SiteImage
                 src="/photos/hero.jpg"
                 alt="Excursion en bateau Tiki Boat — Grand Cul de Sac Marin, Guadeloupe"
