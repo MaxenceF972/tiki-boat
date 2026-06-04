@@ -40,10 +40,10 @@ export default async function HomePage() {
           HERO
       ══════════════════════════════════════════ */}
       <section className="bg-tiki-ocean min-h-screen flex items-center">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-16 w-full grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center py-28 lg:py-24">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-16 w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-center pt-24 pb-12 lg:py-24">
 
-          {/* GAUCHE — Texte */}
-          <div className="order-2 lg:order-1">
+          {/* GAUCHE — Texte (premier dans le DOM = premier sur mobile) */}
+          <div className="order-1">
             <p className="text-tiki-gold text-xs font-bold tracking-[0.25em] uppercase mb-6">
               Excursions en bateau · Guadeloupe
             </p>
@@ -79,8 +79,8 @@ export default async function HomePage() {
           </div>
 
           {/* DROITE — Photo */}
-          <div className="order-1 lg:order-2">
-            <div className="relative rounded-2xl overflow-hidden aspect-[4/5] max-h-[520px] shadow-2xl shadow-black/40">
+          <div className="order-2">
+            <div className="relative rounded-2xl overflow-hidden aspect-[4/3] sm:aspect-[4/3] lg:aspect-[4/5] max-h-[520px] shadow-2xl shadow-black/40">
               <SiteImage
                 src="/photos/hero.jpg"
                 alt="Excursion en bateau Tiki Boat — Grand Cul de Sac Marin, Guadeloupe"
