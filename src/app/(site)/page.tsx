@@ -9,12 +9,12 @@ import { formatPrice } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "Excursions en bateau en Guadeloupe — Tiki Boat",
   description:
-    "Tiki Boat : excursions en bateau en Guadeloupe depuis Pointe-à-Pitre. Croisière journée Grand Cul de Sac Marin, coucher de soleil, privatisation. Snorkeling, repas créole, îlets. Note 4,9/5 · Réservez en ligne.",
+    "Tiki Boat : excursions en bateau en Guadeloupe depuis Pointe-à-Pitre. Croisière journée Grand Cul de Sac Marin, coucher de soleil, privatisation. Snorkeling, repas créole, îlets. Note 4,8/5 · Réservez en ligne.",
   alternates: { canonical: "https://tiki-boat.com" },
   openGraph: {
     title: "Tiki Boat — Excursions en bateau en Guadeloupe",
     description:
-      "Croisière journée, coucher de soleil, privatisation. Snorkeling, îlets, repas créole. À partir de 55 €. Note 4,9/5.",
+      "Croisière journée, coucher de soleil, privatisation. Snorkeling, îlets, repas créole. À partir de 55 €. Note 4,8/5.",
     url: "https://tiki-boat.com",
     type: "website",
   },
@@ -290,8 +290,8 @@ export default async function HomePage() {
             </h2>
             <div className="flex items-center justify-center gap-1 mb-2">
               {[...Array(5)].map((_, i) => <Star key={i} size={18} className="text-tiki-gold fill-tiki-gold" />)}
-              <span className="ml-2 font-bold text-white">4.9</span>
-              <span className="text-white/35 text-sm ml-1">/ 5 · 100+ avis</span>
+              <span className="ml-2 font-bold text-white">4.8</span>
+              <span className="text-white/35 text-sm ml-1">/ 5 · 400+ avis</span>
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">

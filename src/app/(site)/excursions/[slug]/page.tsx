@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     : `À partir de ${exc.priceAdult} € / adulte`;
 
   const title = `${exc.title} en Guadeloupe`;
-  const description = `${exc.description} ${price}. Départ ${exc.departureTime}, durée : ${exc.duration}. Note 4,9/5 · Réservation en ligne.`;
+  const description = `${exc.description} ${price}. Départ ${exc.departureTime}, durée : ${exc.duration}. Note 4,8/5 · Réservation en ligne.`;
   const url = `${BASE}/excursions/${slug}`;
   const ogImage = exc.images[0];
 
@@ -315,9 +315,9 @@ export default async function ExcursionDetailPage({ params }: Props) {
                     {[...Array(5)].map((_, i) => (
                       <Star key={i} className="text-tiki-gold fill-tiki-gold" size={14} />
                     ))}
-                    <span className="text-tiki-cream text-sm font-bold ml-1">4.9/5</span>
+                    <span className="text-tiki-cream text-sm font-bold ml-1">4.8/5</span>
                   </div>
-                  <p className="text-center text-tiki-cream-dark text-xs mt-1">100+ avis vérifiés</p>
+                  <p className="text-center text-tiki-cream-dark text-xs mt-1">400+ avis vérifiés</p>
                 </div>
               </div>
             </div>

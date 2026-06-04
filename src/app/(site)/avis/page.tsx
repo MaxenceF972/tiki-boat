@@ -25,7 +25,7 @@ export default function AvisPage() {
             ))}
             <span className="text-white font-bold text-3xl ml-2">{avgRating.toFixed(1)}/5</span>
           </div>
-          <p className="text-tiki-cream-dark text-lg">Basé sur 100+ avis vérifiés Google & Tripadvisor</p>
+          <p className="text-tiki-cream-dark text-lg">Basé sur 400+ avis Google & 200+ avis Tripadvisor</p>
         </div>
       </section>
 
@@ -34,10 +34,10 @@ export default function AvisPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              { value: "4.9★", label: "Note Google" },
-              { value: "5.0★", label: "Note Tripadvisor" },
-              { value: "100%", label: "Recommandent" },
-              { value: "500+", label: "Clients satisfaits" },
+              { value: "4.8★", label: "Note Google" },
+              { value: "4.9★", label: "Note Tripadvisor" },
+              { value: "400+", label: "Avis Google" },
+              { value: "200+", label: "Avis Tripadvisor" },
             ].map((stat) => (
               <div key={stat.label} className="card-dark text-center py-5">
                 <div className="font-display text-2xl font-bold text-tiki-gold">{stat.value}</div>
