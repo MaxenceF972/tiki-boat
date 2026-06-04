@@ -17,7 +17,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-tiki-ocean border-b border-white/8 shadow-lg shadow-black/20">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-tiki-ocean shadow-lg shadow-black/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
         {/* Mobile: burger gauche · logo centre · réserver droite */}
         <div className="grid grid-cols-[1fr_auto_1fr] md:flex md:items-center md:justify-between h-16 sm:h-[68px] items-center">
