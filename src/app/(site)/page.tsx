@@ -55,15 +55,13 @@ export default async function HomePage() {
 
         {/* Zone texte — centrée verticalement */}
         <div className="relative flex-1 flex items-center max-w-7xl mx-auto w-full px-6 sm:px-10 lg:px-16 pt-20">
-          <div className="max-w-lg">
-            <h1 className="font-display font-black text-white leading-[1.05] mb-6"
-                style={{ fontSize: "clamp(2.8rem, 5.5vw, 5rem)", textShadow: "0 2px 24px rgba(0,0,0,0.7)" }}>
-              Une journée en mer<br />
-              <span className="text-tiki-gold">inoubliable</span><br />
-              en Guadeloupe.
+          <div className="max-w-2xl">
+            <h1 className="font-display font-black text-white leading-[1.08] mb-6"
+                style={{ fontSize: "clamp(2rem, 3.8vw, 3.6rem)", textShadow: "0 2px 24px rgba(0,0,0,0.7)" }}>
+              Une journée en mer <span className="text-tiki-gold">inoubliable</span> en Guadeloupe.
             </h1>
 
-            <p className="text-white/80 text-base leading-relaxed mb-10 max-w-sm"
+            <p className="text-white/80 text-base leading-relaxed mb-10 max-w-md"
                style={{ textShadow: "0 1px 12px rgba(0,0,0,0.8)" }}>
               Snorkeling, îlets sauvages et repas créole les pieds dans l&apos;eau. Une expérience unique dans le Grand Cul de Sac Marin.
             </p>
