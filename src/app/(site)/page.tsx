@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import SiteImage from "@/components/SiteImage";
+import WaveDivider from "@/components/WaveDivider";
 import { Star, ChevronRight, Anchor, Fish, Utensils, Users, Shield, CheckCircle2, Waves } from "lucide-react";
 import { getExcursions } from "@/lib/excursions";
 import { reviews } from "@/data/reviews";
@@ -103,10 +104,12 @@ export default async function HomePage() {
       </section>
 
 
+      <WaveDivider topColor="#0A1E2E" bottomColor="#0F2A3D" />
+
       {/* ══════════════════════════════════════════
           FEATURES — split photo / grille
       ══════════════════════════════════════════ */}
-      <section className="bg-tiki-ocean-mid py-20 overflow-hidden">
+      <section className="bg-tiki-ocean-mid py-16 overflow-hidden">
         <div className="max-w-6xl mx-auto px-5 sm:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
@@ -152,10 +155,12 @@ export default async function HomePage() {
       </section>
 
 
+      <WaveDivider topColor="#0F2A3D" bottomColor="#0A1E2E" flip />
+
       {/* ══════════════════════════════════════════
           EXCURSIONS
       ══════════════════════════════════════════ */}
-      <section className="bg-tiki-ocean py-20">
+      <section className="bg-tiki-ocean py-16">
         <div className="max-w-6xl mx-auto px-5 sm:px-8">
           <div className="text-center mb-14">
             <p className="text-tiki-lagon-light text-xs font-bold tracking-[0.2em] uppercase mb-3">Nos sorties en mer</p>
@@ -212,10 +217,12 @@ export default async function HomePage() {
       </section>
 
 
+      <WaveDivider topColor="#0A1E2E" bottomColor="#0F2A3D" />
+
       {/* ══════════════════════════════════════════
           INCLUS
       ══════════════════════════════════════════ */}
-      <section className="bg-tiki-ocean-mid py-20">
+      <section className="bg-tiki-ocean-mid py-16">
         <div className="max-w-5xl mx-auto px-5 sm:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -257,10 +264,12 @@ export default async function HomePage() {
       </section>
 
 
+      <WaveDivider topColor="#0F2A3D" bottomColor="#0A1E2E" flip />
+
       {/* ══════════════════════════════════════════
           LAGON
       ══════════════════════════════════════════ */}
-      <section className="bg-tiki-ocean py-20">
+      <section className="bg-tiki-ocean py-16">
         <div className="max-w-6xl mx-auto px-5 sm:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative h-72 lg:h-[420px] rounded-2xl overflow-hidden order-2 lg:order-1 border border-white/10">
@@ -299,10 +308,12 @@ export default async function HomePage() {
       </section>
 
 
+      <WaveDivider topColor="#0A1E2E" bottomColor="#0F2A3D" />
+
       {/* ══════════════════════════════════════════
           AVIS
       ══════════════════════════════════════════ */}
-      <section className="bg-tiki-ocean-mid py-20">
+      <section className="bg-tiki-ocean-mid py-16">
         <div className="max-w-6xl mx-auto px-5 sm:px-8">
           <div className="text-center mb-14">
             <p className="text-tiki-lagon-light text-xs font-bold tracking-[0.2em] uppercase mb-3">Avis clients</p>
@@ -345,10 +356,12 @@ export default async function HomePage() {
       </section>
 
 
+      <WaveDivider topColor="#0F2A3D" bottomColor="#0A1E2E" flip />
+
       {/* ══════════════════════════════════════════
           TARIFS
       ══════════════════════════════════════════ */}
-      <section className="bg-tiki-ocean py-20">
+      <section className="bg-tiki-ocean py-16">
         <div className="max-w-4xl mx-auto px-5 sm:px-8">
           <div className="text-center mb-14">
             <p className="text-tiki-lagon-light text-xs font-bold tracking-[0.2em] uppercase mb-3">Tarifs</p>
@@ -398,10 +411,12 @@ export default async function HomePage() {
       </section>
 
 
+      <WaveDivider topColor="#0A1E2E" bottomColor="#0F2A3D" />
+
       {/* ══════════════════════════════════════════
           CTA FINAL — fond sombre, simple
       ══════════════════════════════════════════ */}
-      <section className="bg-tiki-ocean-mid py-20">
+      <section className="bg-tiki-ocean-mid py-16">
         <div className="max-w-2xl mx-auto px-5 sm:px-8 text-center">
           <h2 className="font-display font-black text-white text-3xl sm:text-4xl mb-4">
             Prêt pour le grand large ?
