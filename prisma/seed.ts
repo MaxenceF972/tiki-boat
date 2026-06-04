@@ -11,7 +11,7 @@ async function main() {
       title: "Croisière Grand Cul de Sac Marin",
       subtitle: "Journée complète inoubliable",
       description:
-        "Embarquez pour une journée extraordinaire dans le plus grand lagon des petites Antilles. Découvrez les magnifiques fonds marins grâce au fond de verre du bateau, snorkeling en cœur de Parc National, repas créole les pieds dans l'eau autour de notre bar flottant unique.",
+        "Embarquez pour une journée extraordinaire et unique en Guadeloupe dans le Grand Cul de Sac Marin, le plus grand lagon des Petites Antilles. Fonds marins au fond de verre, snorkeling en cœur de Parc National, épave, mangrove, rivière salée — et repas créole 100% frais servi les pieds dans l'eau autour de notre bar flottant, original et unique en Guadeloupe.",
       duration: "Journée complète",
       departureTime: "08h00",
       returnTime: "17h00",
@@ -29,20 +29,20 @@ async function main() {
         "Boissons",
         "Guide naturaliste",
       ]),
-      notIncluded: JSON.stringify(["Transport jusqu'au point de départ", "Pourboires"]),
+      notIncluded: JSON.stringify(["Transport jusqu'au point de départ"]),
       highlights: JSON.stringify([
-        "Fonds marins avec fond de verre",
+        "Bar flottant unique en Guadeloupe",
+        "Fonds marins avec fond de verre du bateau",
+        "Snorkeling en cœur de Parc National",
         "Îlets Caret, Fajou, la Biche, îlet aux oiseaux",
-        "Barrière de corail",
-        "Plus grand lagon des petites Antilles",
-        "Visite d'une épave",
+        "Barrière de corail & épave",
         "Mangrove & rivière salée",
-        "Bar flottant unique aux Antilles",
+        "Repas créole 100% frais — Chef à bord",
         "Adapté bébés & séniors",
       ]),
       images: JSON.stringify([
-        "https://images.unsplash.com/photo-1590523741831-ab7e8b8f9c7f?w=800",
-        "https://images.unsplash.com/photo-1544551763-92ab472cad5d?w=800",
+        "/photos/grandculdesacmarin-excursion.png",
+        "/photos/grandculdesacmarin-excursion.png",
       ]),
       youtubeId: "gNaCNE7808o",
       badge: "Coup de cœur",
@@ -55,7 +55,7 @@ async function main() {
       title: "Croisière Coucher de Soleil",
       subtitle: "Une soirée magique en mer",
       description:
-        "Laissez-vous séduire par les couleurs enflammées du coucher de soleil sur le lagon des Antilles. Une croisière romantique et apaisante, accompagnée de cocktails et d'une ambiance musicale créole.",
+        "Laissez-vous envoûter par les couleurs flamboyantes du coucher de soleil sur le lagon de Guadeloupe. Cocktails tropicaux, planches créoles, musique douce — une soirée romantique et unique en mer.",
       duration: "3 heures",
       departureTime: "17h00",
       returnTime: "20h00",
@@ -78,11 +78,11 @@ async function main() {
         "Idéal pour les couples",
       ]),
       images: JSON.stringify([
-        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800",
-        "https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=800",
+        "/photos/coucherdesoleil.png",
+        "/photos/coucherdesoleil.png",
       ]),
       youtubeId: null,
-      badge: "Romantique",
+      badge: "Coucher de soleil",
       popular: false,
       isActive: true,
       sortOrder: 1,
@@ -92,7 +92,7 @@ async function main() {
       title: "Privatisation du Bateau",
       subtitle: "Votre événement sur mesure",
       description:
-        "Réservez le Tiki Boat en exclusivité pour vos événements privés : anniversaire, EVJF/EVG, mariage, team building entreprise, ou sunset privé. Nous créons l'expérience parfaite selon vos souhaits.",
+        "Réservez le Tiki Boat en exclusivité pour vos moments uniques : anniversaire, EVJF/EVG, mariage, team building, sunset privé. Programme 100% sur mesure, départ où vous voulez — Guadeloupe, Les Saintes, Marie-Galante. On s'occupe de tout.",
       duration: "Sur mesure",
       departureTime: "Au choix",
       returnTime: "Au choix",
@@ -110,16 +110,11 @@ async function main() {
       ]),
       notIncluded: JSON.stringify(["Options spéciales sur devis"]),
       highlights: JSON.stringify([
-        "Anniversaire",
-        "EVJF / EVG",
-        "Mariage",
-        "Team building",
-        "Sunset privé",
-        "Sur mesure",
+        "Anniversaire", "EVJF / EVG", "Mariage", "Team building", "Sunset privé", "Sur mesure",
       ]),
       images: JSON.stringify([
-        "https://images.unsplash.com/photo-1544551763-92ab472cad5d?w=800",
-        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800",
+        "/photos/bateau.jpg",
+        "/photos/bateau.jpg",
       ]),
       youtubeId: null,
       badge: "Sur mesure",
@@ -135,9 +130,10 @@ async function main() {
       update: exc,
       create: exc,
     });
+    console.log(`  ✓ ${exc.title}`);
   }
 
-  console.log("✓ Excursions seeded");
+  console.log("✓ Seed terminé");
 }
 
 main()

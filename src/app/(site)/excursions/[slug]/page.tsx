@@ -178,9 +178,9 @@ export default async function ExcursionDetailPage({ params }: Props) {
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                 {[
                   { icon: Clock, label: "Durée", value: excursion.duration },
-                  { icon: CalendarDays, label: "Départ", value: excursion.departureTime },
+                  { icon: CalendarDays, label: "Heure départ", value: excursion.departureTime },
                   { icon: Users, label: "Capacité", value: `Max ${excursion.maxPassengers}` },
-                  { icon: MapPin, label: "Départ", value: excursion.departurePoint.split("/")[0].trim() },
+                  { icon: MapPin, label: "Point de RDV", value: excursion.departurePoint.split("/")[0].trim() },
                 ].map((item) => (
                   <div key={item.label} className="card-dark text-center py-4">
                     <item.icon className="text-tiki-gold mx-auto mb-2" size={22} />

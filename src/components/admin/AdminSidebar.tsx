@@ -35,8 +35,8 @@ export default function AdminSidebar() {
       <div className="px-5 pt-6 pb-5 border-b border-white/5">
         <Image
           src="/logo.png" alt="Tiki Boat"
-          width={110} height={36}
-          className="h-8 w-auto object-contain"
+          width={150} height={50}
+          className="h-12 w-auto object-contain"
         />
         <p className="text-white/20 text-[10px] font-semibold tracking-[0.15em] uppercase mt-2">
           Administration
