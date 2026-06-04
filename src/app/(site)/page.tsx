@@ -212,12 +212,12 @@ export default async function HomePage() {
                 ))}
               </ul>
             </div>
-            <div className="relative h-80 lg:h-[420px] rounded-2xl overflow-hidden border border-white/10">
+            <div className="relative h-80 lg:h-[420px] rounded-2xl overflow-hidden border border-white/10 bg-tiki-ocean">
               <SiteImage
                 src="/photos/bateau.jpg"
                 alt="Le Tiki Boat"
                 label="Photo du Tiki Boat"
-                fill className="object-cover"
+                fill className="object-contain"
               />
             </div>
           </div>
