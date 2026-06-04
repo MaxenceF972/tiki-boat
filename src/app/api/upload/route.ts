@@ -1,7 +1,14 @@
 import { NextRequest, NextResponse } from "next/server";
-import { put } from "@vercel/blob";
+import { createClient } from "@supabase/supabase-js";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
+
+const supabase = createClient(
+  process.env.SUPABASE_URL!,
+  process.env.SUPABASE_SERVICE_ROLE_KEY!
+);
+
+const BUCKET = "tikiboat-images";
 
 export async function POST(req: NextRequest) {
   const session = await getServerSession(authOptions);
@@ -21,10 +28,24 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Fichier trop volumineux (max 5 Mo)" }, { status: 400 });
   }
 
-  const ext = file.name.split(".").pop() ?? "jpg";
-  const filename = `tikiboat/${Date.now()}-${Math.random().toString(36).slice(2)}.${ext}`;
+  const ext  = file.name.split(".").pop() ?? "jpg";
+  const path = `uploads/${Date.now()}-${Math.random().toString(36).slice(2)}.${ext}`;
+  const buffer = Buffer.from(await file.arrayBuffer());
 
-  const blob = await put(filename, file, { access: "public" });
+  // Crée le bucket s'il n'existe pas
+  const { data: buckets } = await supabase.storage.listBuckets();
+  if (!buckets?.find(b => b.name === BUCKET)) {
+    await supabase.storage.createBucket(BUCKET, { public: true });
+  }
 
-  return NextResponse.json({ url: blob.url });
+  const { error } = await supabase.storage.from(BUCKET).upload(path, buffer, {
+    contentType: file.type,
+    upsert: false,
+  });
+
+  if (error) return NextResponse.json({ error: error.message }, { status: 500 });
+
+  const { data: { publicUrl } } = supabase.storage.from(BUCKET).getPublicUrl(path);
+
+  return NextResponse.json({ url: publicUrl });
 }
