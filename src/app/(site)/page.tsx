@@ -53,23 +53,48 @@ export default async function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/50 to-black/10" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent" />
 
-        {/* Zone texte — centrée verticalement */}
+        {/* Zone principale — texte gauche + cartes droite */}
         <div className="relative flex-1 flex items-center max-w-7xl mx-auto w-full px-6 sm:px-10 lg:px-16 pt-20">
-          <div className="max-w-2xl">
-            <h1 className="font-display font-black text-white leading-[1.08] mb-6"
-                style={{ fontSize: "clamp(2rem, 3.8vw, 3.6rem)", textShadow: "0 2px 24px rgba(0,0,0,0.7)" }}>
-              Une journée en mer <span className="text-tiki-gold">inoubliable</span> en Guadeloupe.
-            </h1>
+          <div className="w-full flex items-center justify-between gap-12">
 
-            <p className="text-white/80 text-base leading-relaxed mb-10 max-w-md"
-               style={{ textShadow: "0 1px 12px rgba(0,0,0,0.8)" }}>
-              Snorkeling, îlets sauvages et repas créole les pieds dans l&apos;eau. Une expérience unique dans le Grand Cul de Sac Marin.
-            </p>
+            {/* GAUCHE — texte */}
+            <div className="max-w-xl">
+              <h1 className="font-display font-black text-white leading-[1.08] mb-6"
+                  style={{ fontSize: "clamp(2rem, 3.8vw, 3.6rem)", textShadow: "0 2px 24px rgba(0,0,0,0.7)" }}>
+                Une journée en mer <span className="text-tiki-gold">inoubliable</span> en Guadeloupe.
+              </h1>
 
-            <Link href="/reservation"
-              className="inline-flex items-center gap-2 bg-tiki-gold hover:bg-tiki-gold-dark text-tiki-ocean font-bold py-4 px-9 rounded-full transition-all hover:scale-105 text-sm shadow-lg shadow-black/30">
-              Réserver maintenant <ChevronRight size={16} />
-            </Link>
+              <p className="text-white/80 text-base leading-relaxed mb-10 max-w-md"
+                 style={{ textShadow: "0 1px 12px rgba(0,0,0,0.8)" }}>
+                Snorkeling, îlets sauvages et repas créole les pieds dans l&apos;eau. Une expérience unique dans le Grand Cul de Sac Marin.
+              </p>
+
+              <Link href="/reservation"
+                className="inline-flex items-center gap-2 bg-tiki-gold hover:bg-tiki-gold-dark text-tiki-ocean font-bold py-4 px-9 rounded-full transition-all hover:scale-105 text-sm shadow-lg shadow-black/30">
+                Réserver maintenant <ChevronRight size={16} />
+              </Link>
+            </div>
+
+            {/* DROITE — cartes excursions (desktop uniquement) */}
+            <div className="hidden lg:flex flex-col gap-2.5 w-80 xl:w-96 shrink-0">
+              <p className="text-white/40 text-xs uppercase tracking-[0.2em] mb-1">Nos excursions</p>
+              {excursions.map((exc) => (
+                <Link key={exc.id} href={`/excursions/${exc.slug}`}
+                  className="flex items-center justify-between px-4 py-3.5 rounded-xl bg-white/10 hover:bg-white/18 backdrop-blur-md border border-white/15 hover:border-tiki-gold/50 transition-all group">
+                  <div>
+                    <div className="text-white font-bold text-sm group-hover:text-tiki-gold transition-colors">{exc.title}</div>
+                    <div className="text-white/40 text-xs mt-0.5">{exc.duration}</div>
+                  </div>
+                  <div className="text-right shrink-0 ml-4">
+                    <div className="text-tiki-gold font-black text-base">
+                      {exc.pricePrivate ? "Sur devis" : formatPrice(exc.priceAdult)}
+                    </div>
+                    {!exc.pricePrivate && <div className="text-white/30 text-xs">/ adulte</div>}
+                  </div>
+                </Link>
+              ))}
+            </div>
+
           </div>
         </div>
 
