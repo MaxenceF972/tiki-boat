@@ -67,8 +67,8 @@ export const excursions: Excursion[] = [
       "Idéal pour les couples",
     ],
     images: [
-      "/photos/lagon.jpg",
-      "/photos/lagon.jpg",
+      "/photos/coucherdesoleil.png",
+      "/photos/coucherdesoleil.png",
     ],
     badge: "Romantique",
   },
