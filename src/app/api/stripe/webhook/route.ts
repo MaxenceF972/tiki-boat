@@ -55,6 +55,7 @@ export async function POST(req: NextRequest) {
       customerEmail:  session.customer_email ?? "",
       customerPhone:  meta.customerPhone,
       excursionTitle: meta.excursionTitle,
+      excursionSlug:  meta.excursionSlug,
       date:           meta.date,
       adults, children, infants,
       totalPrice:     parseFloat(meta.totalPrice),

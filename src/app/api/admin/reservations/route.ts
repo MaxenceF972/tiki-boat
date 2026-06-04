@@ -58,6 +58,7 @@ export async function POST(req: NextRequest) {
       customerEmail:  body.customerEmail,
       customerPhone:  body.customerPhone ?? "",
       excursionTitle: body.excursionTitle,
+      excursionSlug:  body.excursionSlug,
       date:           body.date,
       adults:         Number(body.adults ?? 1),
       children:       Number(body.children ?? 0),
