@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useMemo } from "react";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { CheckCircle2, Clock, Phone, Mail, Filter, Download, Plus, X, Save } from "lucide-react";
@@ -48,6 +48,31 @@ export default function ReservationsPage() {
   const calcTotal = () => selectedExc
     ? createForm.adults * selectedExc.priceAdult + createForm.children * selectedExc.priceChild
     : 0;
+
+  const MAX_PASSENGERS = 12;
+
+  // Vérifie la capacité et les conflits pour le jour sélectionné
+  const capacityCheck = useMemo(() => {
+    if (!createForm.date || !createForm.excursionSlug) return null;
+
+    const dateResas = reservations.filter(r =>
+      r.date === createForm.date && r.status !== "cancelled"
+    );
+
+    // Places déjà prises pour cette excursion ce jour-là
+    const sameTitle = selectedExc?.title ?? "";
+    const sameExcResas = dateResas.filter(r => r.excursionTitle === sameTitle);
+    const bookedSpots  = sameExcResas.reduce((s, r) => s + r.adults + r.children, 0);
+    const newSpots     = createForm.adults + createForm.children;
+    const remaining    = MAX_PASSENGERS - bookedSpots;
+    const wouldExceed  = bookedSpots + newSpots > MAX_PASSENGERS;
+
+    // Excursion différente déjà réservée ce jour-là
+    const otherResa   = dateResas.find(r => r.excursionTitle !== sameTitle && r.excursionTitle !== "");
+    const conflictExc = otherResa?.excursionTitle ?? null;
+
+    return { bookedSpots, remaining, wouldExceed, conflictExc, newSpots };
+  }, [createForm.date, createForm.excursionSlug, createForm.adults, createForm.children, reservations, selectedExc]);
 
   const submitCreate = async () => {
     setCreating(true);
@@ -241,13 +266,40 @@ export default function ReservationsPage() {
                 onChange={e => setCreateForm(p => ({ ...p, notes: e.target.value }))}
                 className={`${inputCls} resize-none`} />
             </div>
+
+            {/* Alerte capacité — pleine largeur */}
+            {capacityCheck && (
+              <div className="md:col-span-2 lg:col-span-3">
+                {capacityCheck.conflictExc && (
+                  <div className="flex items-start gap-2.5 p-3.5 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-sm mb-2">
+                    <span className="text-lg leading-none">⚠️</span>
+                    <span>
+                      <strong>Conflit :</strong> il y a déjà une réservation pour <strong>{capacityCheck.conflictExc}</strong> ce jour-là. Le bateau ne peut pas faire deux excursions différentes le même jour.
+                    </span>
+                  </div>
+                )}
+                {capacityCheck.wouldExceed ? (
+                  <div className="flex items-start gap-2.5 p-3.5 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-sm">
+                    <span className="text-lg leading-none">🚫</span>
+                    <span>
+                      <strong>Capacité dépassée :</strong> {capacityCheck.bookedSpots} place{capacityCheck.bookedSpots > 1 ? "s" : ""} déjà réservée{capacityCheck.bookedSpots > 1 ? "s" : ""} ce jour + {capacityCheck.newSpots} nouvelles = {capacityCheck.bookedSpots + capacityCheck.newSpots} / {MAX_PASSENGERS} max.
+                    </span>
+                  </div>
+                ) : capacityCheck.bookedSpots > 0 ? (
+                  <div className="flex items-center gap-2 p-3 rounded-xl bg-yellow-500/10 border border-yellow-500/20 text-yellow-400 text-sm">
+                    <span>📊</span>
+                    <span>{capacityCheck.bookedSpots} place{capacityCheck.bookedSpots > 1 ? "s" : ""} déjà prise{capacityCheck.bookedSpots > 1 ? "s" : ""} ce jour — il reste <strong>{capacityCheck.remaining}</strong> place{capacityCheck.remaining > 1 ? "s" : ""}</span>
+                  </div>
+                ) : null}
+              </div>
+            )}
           </div>
           <div className="flex justify-end gap-3 px-6 py-4 border-t border-white/5">
             <button onClick={() => setShowCreate(false)}
               className="px-5 py-2.5 border border-white/10 text-white/50 hover:text-white rounded-xl text-sm transition-colors">
               Annuler
             </button>
-            <button onClick={submitCreate} disabled={creating || !createForm.customerName || !createForm.date || !createForm.customerEmail}
+            <button onClick={submitCreate} disabled={creating || !createForm.customerName || !createForm.date || !createForm.customerEmail || !!capacityCheck?.wouldExceed || !!capacityCheck?.conflictExc}
               className="flex items-center gap-2 bg-tiki-gold hover:bg-tiki-gold-dark text-tiki-ocean font-bold py-2.5 px-6 rounded-xl text-sm transition-colors disabled:opacity-50">
               <Save size={15} /> {creating ? "Enregistrement..." : "Créer la réservation"}
             </button>
