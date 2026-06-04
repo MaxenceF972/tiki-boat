@@ -207,10 +207,16 @@ export default async function HomePage() {
                         </div>
                       )}
                     </div>
-                    <Link href={exc.pricePrivate ? "/contact?type=privatisation" : `/reservation?excursion=${exc.slug}`}
-                      className="bg-tiki-gold hover:bg-tiki-gold-dark text-tiki-ocean text-sm font-bold px-5 py-3 rounded-full transition-colors min-h-[44px] flex items-center">
-                      {exc.pricePrivate ? "Devis" : "Réserver"}
-                    </Link>
+                    <div className="flex items-center gap-2">
+                      <Link href={`/excursions/${exc.slug}`}
+                        className="border border-white/20 text-white/60 hover:border-white/40 hover:text-white text-sm font-medium px-4 py-3 rounded-full transition-colors min-h-[44px] flex items-center">
+                        Détails
+                      </Link>
+                      <Link href={exc.pricePrivate ? "/contact?type=privatisation" : `/reservation?excursion=${exc.slug}`}
+                        className="bg-tiki-gold hover:bg-tiki-gold-dark text-tiki-ocean text-sm font-bold px-4 py-3 rounded-full transition-colors min-h-[44px] flex items-center">
+                        {exc.pricePrivate ? "Devis" : "Réserver"}
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
