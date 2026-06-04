@@ -80,7 +80,7 @@ export default async function HomePage() {
 
           {/* DROITE — Photo (masqué sur mobile) */}
           <div className="order-2 hidden lg:block">
-            <div className="relative rounded-2xl overflow-hidden aspect-[4/3] lg:aspect-[4/5] max-h-[520px] shadow-2xl shadow-black/40 bg-tiki-ocean">
+            <div className="relative rounded-2xl overflow-hidden aspect-[3/2] shadow-2xl shadow-black/40 bg-tiki-ocean">
               <SiteImage
                 src="/photos/hero.jpg"
                 alt="Excursion en bateau Tiki Boat — Grand Cul de Sac Marin, Guadeloupe"
