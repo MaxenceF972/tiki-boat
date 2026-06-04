@@ -54,22 +54,34 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Navigation */}
+          {/* Excursions */}
           <div>
-            <h3 className="font-bold text-tiki-gold text-lg mb-4">Navigation</h3>
+            <h3 className="font-bold text-tiki-gold text-sm uppercase tracking-widest mb-5">Excursions</h3>
             <ul className="space-y-3">
               {[
-                { href: "/excursions", label: "Nos excursions" },
                 { href: "/excursions/grand-cul-de-sac-marin", label: "Croisière journée" },
                 { href: "/excursions/coucher-de-soleil", label: "Coucher de soleil" },
                 { href: "/excursions/privatisation", label: "Privatisation" },
+                { href: "/reservation", label: "Réserver" },
+              ].map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="text-white/50 hover:text-white transition-colors text-sm">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+
+            <h3 className="font-bold text-tiki-gold text-sm uppercase tracking-widest mb-5 mt-8">Informations</h3>
+            <ul className="space-y-3">
+              {[
                 { href: "/galerie", label: "Galerie" },
                 { href: "/avis", label: "Avis clients" },
-                { href: "/reservation", label: "Réserver" },
+                { href: "/blog", label: "Blog" },
                 { href: "/contact", label: "Contact" },
               ].map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-tiki-cream-dark hover:text-tiki-gold transition-colors text-sm">
+                  <Link href={link.href} className="text-white/50 hover:text-white transition-colors text-sm">
                     {link.label}
                   </Link>
                 </li>
@@ -117,9 +129,10 @@ export default function Footer() {
       <div className="border-t border-tiki-gold/10 py-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-tiki-cream-dark/60">
           <p>© {new Date().getFullYear()} Tiki Boat — Tous droits réservés</p>
-          <div className="flex gap-6">
+          <div className="flex flex-wrap gap-5">
             <Link href="/mentions-legales" className="hover:text-tiki-gold transition-colors">Mentions légales</Link>
             <Link href="/cgv" className="hover:text-tiki-gold transition-colors">CGV</Link>
+            <Link href="/confidentialite" className="hover:text-tiki-gold transition-colors">Politique de confidentialité</Link>
           </div>
         </div>
       </div>
