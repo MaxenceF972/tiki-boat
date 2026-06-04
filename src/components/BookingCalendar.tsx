@@ -57,10 +57,20 @@ export default function BookingCalendar({ excursionSlug, value, onChange }: Prop
   // Complète pour avoir des lignes entières
   while (cells.length % 7 !== 0) cells.push(null);
 
+  // Calcule la première date réservable :
+  // - Jamais le jour même
+  // - Si après 13h : pas non plus le lendemain (trop tard pour organiser)
+  const minBookableDate = () => {
+    const now  = new Date();
+    const min  = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    const daysToAdd = now.getHours() >= 13 ? 2 : 1;
+    min.setDate(min.getDate() + daysToAdd);
+    return min;
+  };
+
   const isPast = (d: number) => {
     const date = new Date(year, month, d);
-    const todayStart = new Date(today.getFullYear(), today.getMonth(), today.getDate());
-    return date < todayStart;
+    return date < minBookableDate();
   };
 
   const isFull = (d: number) => {
