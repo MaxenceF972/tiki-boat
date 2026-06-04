@@ -39,50 +39,56 @@ export default async function HomePage() {
       {/* ══════════════════════════════════════════
           HERO — photo en fond plein écran
       ══════════════════════════════════════════ */}
-      <section className="relative min-h-screen flex items-end">
+      <section className="relative min-h-screen flex flex-col">
 
         {/* Photo de fond */}
         <SiteImage
           src="/photos/grandculdesacmarin-excursion.png"
           alt="Excursion en bateau Tiki Boat — Grand Cul de Sac Marin, Guadeloupe"
           label="Photo principale du hero"
-          fill className="object-cover" priority
+          fill className="object-cover object-center" priority
         />
 
-        {/* Dégradé : léger en haut, sombre en bas pour le texte */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/20" />
+        {/* Dégradé : sombre à gauche pour lisibilité, sombre en bas pour stats */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30" />
 
-        {/* Contenu */}
-        <div className="relative w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 pb-16 sm:pb-20 pt-32">
-          <p className="text-tiki-gold text-xs font-bold tracking-[0.25em] uppercase mb-5 drop-shadow">
-            Excursions en bateau · Guadeloupe
-          </p>
+        {/* Zone texte — centrée verticalement */}
+        <div className="relative flex-1 flex items-center max-w-7xl mx-auto w-full px-6 sm:px-10 lg:px-16 pt-20">
+          <div className="max-w-lg">
+            <p className="text-tiki-gold text-xs font-bold tracking-[0.25em] uppercase mb-5">
+              Excursions en bateau · Guadeloupe
+            </p>
 
-          <h1 className="font-display font-black text-white leading-[1.06] mb-6 drop-shadow-lg"
-              style={{ fontSize: "clamp(2.6rem, 5vw, 4.5rem)" }}>
-            Une journée en mer<br />
-            <span className="text-tiki-gold">inoubliable</span><br />
-            en Guadeloupe.
-          </h1>
+            <h1 className="font-display font-black text-white leading-[1.05] mb-6"
+                style={{ fontSize: "clamp(2.8rem, 5.5vw, 5rem)" }}>
+              Une journée en mer<br />
+              <span className="text-tiki-gold">inoubliable</span><br />
+              en Guadeloupe.
+            </h1>
 
-          <p className="text-white/75 text-base leading-relaxed mb-10 max-w-lg drop-shadow">
-            Snorkeling, îlets sauvages et repas créole les pieds dans l&apos;eau. Une expérience unique dans le Grand Cul de Sac Marin.
-          </p>
+            <p className="text-white/70 text-base leading-relaxed mb-10 max-w-sm">
+              Snorkeling, îlets sauvages et repas créole les pieds dans l&apos;eau. Une expérience unique dans le Grand Cul de Sac Marin.
+            </p>
 
-          <Link href="/reservation"
-            className="inline-flex items-center gap-2 bg-tiki-gold hover:bg-tiki-gold-dark text-tiki-ocean font-bold py-4 px-9 rounded-full transition-all hover:scale-105 text-sm shadow-lg shadow-tiki-gold/30 mb-14">
-            Réserver maintenant <ChevronRight size={16} />
-          </Link>
+            <Link href="/reservation"
+              className="inline-flex items-center gap-2 bg-tiki-gold hover:bg-tiki-gold-dark text-tiki-ocean font-bold py-4 px-9 rounded-full transition-all hover:scale-105 text-sm shadow-lg shadow-black/30">
+              Réserver maintenant <ChevronRight size={16} />
+            </Link>
+          </div>
+        </div>
 
-          <div className="flex gap-10 sm:gap-16 pt-6 border-t border-white/20">
+        {/* Stats — ancrées en bas */}
+        <div className="relative max-w-7xl mx-auto w-full px-6 sm:px-10 lg:px-16 pb-12">
+          <div className="flex gap-10 sm:gap-16 pt-5 border-t border-white/20 w-fit">
             {[
               { v: "4.9 ★", l: "Note Google" },
               { v: "500+", l: "Clients satisfaits" },
               { v: "2018", l: "En Guadeloupe" },
             ].map(({ v, l }) => (
               <div key={l}>
-                <div className="text-white font-bold text-xl drop-shadow">{v}</div>
-                <div className="text-white/50 text-xs mt-1">{l}</div>
+                <div className="text-white font-bold text-xl">{v}</div>
+                <div className="text-white/45 text-xs mt-1">{l}</div>
               </div>
             ))}
           </div>
