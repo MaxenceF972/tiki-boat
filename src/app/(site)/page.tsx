@@ -98,21 +98,8 @@ export default async function HomePage() {
           </div>
         </div>
 
-        {/* Stats — ancrées en bas */}
-        <div className="relative max-w-7xl mx-auto w-full px-6 sm:px-10 lg:px-16 pb-12">
-          <div className="flex gap-10 sm:gap-16 pt-5 border-t border-white/20 w-fit">
-            {[
-              { v: "4.9 ★", l: "Note Google" },
-              { v: "500+", l: "Clients satisfaits" },
-              { v: "2018", l: "En Guadeloupe" },
-            ].map(({ v, l }) => (
-              <div key={l}>
-                <div className="text-white font-bold text-xl">{v}</div>
-                <div className="text-white/45 text-xs mt-1">{l}</div>
-              </div>
-            ))}
-          </div>
-        </div>
+        {/* Espacement bas */}
+        <div className="pb-12" />
       </section>
 
 
