@@ -57,14 +57,14 @@ export default function BookingCalendar({ excursionSlug, value, onChange }: Prop
   // Complète pour avoir des lignes entières
   while (cells.length % 7 !== 0) cells.push(null);
 
-  // Calcule la première date réservable :
+  // Calcule la première date réservable en fuseau Guadeloupe (UTC-4, pas de DST)
   // - Jamais le jour même
-  // - Si après 13h : pas non plus le lendemain (trop tard pour organiser)
+  // - Si après 13h heure Guadeloupe : pas non plus le lendemain
   const minBookableDate = () => {
-    const now  = new Date();
-    const min  = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-    const daysToAdd = now.getHours() >= 13 ? 2 : 1;
-    min.setDate(min.getDate() + daysToAdd);
+    const nowGP = new Date(new Date().toLocaleString("en-US", { timeZone: "America/Guadeloupe" }));
+    const hour  = nowGP.getHours();
+    const min   = new Date(nowGP.getFullYear(), nowGP.getMonth(), nowGP.getDate());
+    min.setDate(min.getDate() + (hour >= 13 ? 2 : 1));
     return min;
   };
 
