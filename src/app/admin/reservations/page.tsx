@@ -200,7 +200,7 @@ export default function ReservationsPage() {
             </div>
             {/* Email */}
             <div>
-              <label className={labelCls}>Email</label>
+              <label className={labelCls}>Email *</label>
               <input type="email" value={createForm.customerEmail} placeholder="jean@email.com"
                 onChange={e => setCreateForm(p => ({ ...p, customerEmail: e.target.value }))}
                 className={inputCls} />
@@ -247,7 +247,7 @@ export default function ReservationsPage() {
               className="px-5 py-2.5 border border-white/10 text-white/50 hover:text-white rounded-xl text-sm transition-colors">
               Annuler
             </button>
-            <button onClick={submitCreate} disabled={creating || !createForm.customerName || !createForm.date}
+            <button onClick={submitCreate} disabled={creating || !createForm.customerName || !createForm.date || !createForm.customerEmail}
               className="flex items-center gap-2 bg-tiki-gold hover:bg-tiki-gold-dark text-tiki-ocean font-bold py-2.5 px-6 rounded-xl text-sm transition-colors disabled:opacity-50">
               <Save size={15} /> {creating ? "Enregistrement..." : "Créer la réservation"}
             </button>
