@@ -3,12 +3,14 @@ import { createClient } from "@supabase/supabase-js";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 
-const supabase = createClient(
-  process.env.SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
-);
-
 const BUCKET = "tikiboat-images";
+
+function getSupabase() {
+  return createClient(
+    process.env.SUPABASE_URL!,
+    process.env.SUPABASE_SERVICE_ROLE_KEY!
+  );
+}
 
 export async function POST(req: NextRequest) {
   const session = await getServerSession(authOptions);
@@ -31,6 +33,8 @@ export async function POST(req: NextRequest) {
   const ext  = file.name.split(".").pop() ?? "jpg";
   const path = `uploads/${Date.now()}-${Math.random().toString(36).slice(2)}.${ext}`;
   const buffer = Buffer.from(await file.arrayBuffer());
+
+  const supabase = getSupabase();
 
   // Crée le bucket s'il n'existe pas
   const { data: buckets } = await supabase.storage.listBuckets();
