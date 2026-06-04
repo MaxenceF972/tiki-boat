@@ -135,7 +135,9 @@ export default async function HomePage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {excursions.map((exc) => (
-              <div key={exc.id} className="bg-tiki-ocean-mid rounded-2xl overflow-hidden border border-white/8 hover:border-tiki-gold/30 hover:shadow-xl hover:shadow-black/30 transition-all duration-300 hover:-translate-y-1 group flex flex-col">
+              <div key={exc.id} className="relative bg-tiki-ocean-mid rounded-2xl overflow-hidden border border-white/8 hover:border-tiki-gold/30 hover:shadow-xl hover:shadow-black/30 transition-all duration-300 hover:-translate-y-1 group flex flex-col">
+                {/* Overlay link — toute la carte pointe vers le détail */}
+                <Link href={`/excursions/${exc.slug}`} className="absolute inset-0 z-0" aria-label={exc.title} />
                 <div className="relative h-52 overflow-hidden">
                   <SiteImage src={exc.images[0]} alt={exc.title}
                     label={exc.title} fill
@@ -156,7 +158,7 @@ export default async function HomePage() {
                   <h3 className="font-display font-black text-white text-lg leading-tight mb-1">{exc.title}</h3>
                   <p className="text-tiki-cream-dark text-xs mb-2">{exc.duration}</p>
                   <p className="text-white/50 text-sm leading-relaxed mb-5 flex-1 line-clamp-2">{exc.description}</p>
-                  <div className="flex items-center justify-between pt-4 border-t border-white/8">
+                  <div className="relative z-10 flex items-center justify-between pt-4 border-t border-white/8">
                     <div>
                       {exc.pricePrivate ? (
                         <span className="text-tiki-gold font-black text-lg">Sur devis</span>
