@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-display: 'Syne', 'Inter', system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #0A1E2E;
+  color: #E8F4F8;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-tiki-gold hover:bg-tiki-gold-dark text-tiki-ocean font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-tiki-gold/40 inline-flex items-center gap-2;
+  }
+
+  .btn-secondary {
+    @apply border-2 border-tiki-gold text-tiki-gold hover:bg-tiki-gold hover:text-tiki-ocean font-bold py-3 px-8 rounded-full transition-all duration-300 inline-flex items-center gap-2;
+  }
+
+  .btn-red {
+    @apply bg-tiki-red hover:bg-tiki-red-dark text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg inline-flex items-center gap-2;
+  }
+
+  .btn-lagon {
+    @apply bg-tiki-lagon hover:bg-tiki-lagon-light text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg shadow-tiki-lagon/30 inline-flex items-center gap-2;
+  }
+
+  .section-title {
+    @apply font-display text-4xl md:text-5xl font-bold text-tiki-gold leading-tight;
+  }
+
+  .section-subtitle {
+    @apply text-tiki-cream-dark text-lg md:text-xl leading-relaxed;
+  }
+
+  .card-dark {
+    @apply bg-tiki-ocean-mid border border-tiki-lagon/20 rounded-2xl p-6 hover:border-tiki-gold/40 transition-all duration-300;
+  }
+
+  .badge {
+    @apply bg-tiki-lagon/20 text-tiki-lagon-light text-sm font-semibold px-3 py-1 rounded-full border border-tiki-lagon/30;
+  }
+
+  .badge-gold {
+    @apply bg-tiki-gold/20 text-tiki-gold text-sm font-semibold px-3 py-1 rounded-full border border-tiki-gold/30;
+  }
+
+  .whatsapp-float {
+    @apply fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-2xl transition-all duration-300 hover:scale-110;
+  }
+}
+
+/* iOS Safari — prevent zoom on input focus (font-size must be >= 16px) */
+input, select, textarea {
+  font-size: 16px !important;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0A1E2E; }
+::-webkit-scrollbar-thumb { background: #0891B2; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #D4A017; }
+

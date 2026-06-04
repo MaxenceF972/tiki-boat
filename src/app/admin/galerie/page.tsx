@@ -1,0 +1,185 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
+import Image from "next/image";
+import { Plus, Trash2, PlayCircle, ImageIcon, GripVertical } from "lucide-react";
+
+interface GalleryItem {
+  id: string; type: string; url: string; caption?: string; sortOrder: number;
+}
+
+export default function GalleriePage() {
+  const { data: session, status } = useSession();
+  const router = useRouter();
+  const [items, setItems] = useState<GalleryItem[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [adding, setAdding] = useState(false);
+  const [form, setForm] = useState({ type: "photo", url: "", caption: "" });
+  const [saving, setSaving] = useState(false);
+
+  useEffect(() => { if (status === "unauthenticated") router.push("/admin/login"); }, [status, router]);
+
+  const fetchItems = async () => {
+    const res = await fetch("/api/admin/gallery");
+    setItems(await res.json());
+    setLoading(false);
+  };
+
+  useEffect(() => { if (session) fetchItems(); }, [session]);
+
+  const addItem = async () => {
+    if (!form.url) return;
+    setSaving(true);
+    await fetch("/api/admin/gallery", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ ...form, sortOrder: items.length }),
+    });
+    await fetchItems();
+    setForm({ type: "photo", url: "", caption: "" });
+    setAdding(false);
+    setSaving(false);
+  };
+
+  const deleteItem = async (id: string) => {
+    if (!confirm("Supprimer cet élément ?")) return;
+    await fetch("/api/admin/gallery", {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ id }),
+    });
+    fetchItems();
+  };
+
+  const getYouTubeId = (url: string) => {
+    const m = url.match(/(?:youtu\.be\/|v=|embed\/)([^&\n?#]+)/);
+    return m ? m[1] : null;
+  };
+
+  if (status === "loading" || !session) return <div className="p-8 text-white/30">Chargement...</div>;
+
+  return (
+    <div className="p-6 lg:p-8">
+      <div className="flex items-center justify-between mb-8 flex-wrap gap-4">
+        <div>
+          <h1 className="font-display font-black text-white text-2xl">Galerie</h1>
+          <p className="text-white/40 text-sm mt-0.5">{items.length} élément{items.length !== 1 ? "s" : ""}</p>
+        </div>
+        <button onClick={() => setAdding(true)}
+          className="flex items-center gap-2 bg-tiki-gold hover:bg-tiki-gold-dark text-tiki-ocean font-bold py-2.5 px-5 rounded-xl text-sm transition-colors">
+          <Plus size={16} /> Ajouter
+        </button>
+      </div>
+
+      {/* Formulaire ajout */}
+      {adding && (
+        <div className="bg-tiki-ocean-mid border border-tiki-gold/30 rounded-2xl p-6 mb-6">
+          <h2 className="font-bold text-white mb-4 text-sm">Nouvel élément</h2>
+          <div className="space-y-4">
+            {/* Type */}
+            <div className="flex gap-3">
+              {[
+                { val: "photo", icon: ImageIcon, label: "Photo (URL)" },
+                { val: "video", icon: PlayCircle,   label: "Vidéo YouTube" },
+              ].map(({ val, icon: Icon, label }) => (
+                <label key={val}
+                  className={`flex items-center gap-2 cursor-pointer px-4 py-2.5 rounded-xl border transition-all ${
+                    form.type === val ? "border-tiki-gold bg-tiki-gold/10 text-tiki-gold" : "border-white/15 text-white/50"
+                  }`}>
+                  <input type="radio" value={val} checked={form.type === val}
+                    onChange={e => setForm(p => ({ ...p, type: e.target.value }))} className="sr-only" />
+                  <Icon size={15} /> <span className="text-sm">{label}</span>
+                </label>
+              ))}
+            </div>
+
+            <div>
+              <label className="block text-white/50 text-xs mb-1.5">
+                {form.type === "photo" ? "URL de la photo" : "URL YouTube (ex: https://youtu.be/xxx)"}
+              </label>
+              <input type="url" value={form.url} onChange={e => setForm(p => ({ ...p, url: e.target.value }))}
+                placeholder={form.type === "photo" ? "https://..." : "https://youtu.be/..."}
+                className="w-full bg-tiki-ocean border border-white/12 focus:border-tiki-gold rounded-xl px-4 py-3 text-white placeholder-white/20 outline-none text-sm" />
+            </div>
+
+            <div>
+              <label className="block text-white/50 text-xs mb-1.5">Légende (optionnel)</label>
+              <input type="text" value={form.caption} onChange={e => setForm(p => ({ ...p, caption: e.target.value }))}
+                placeholder="Description de la photo..."
+                className="w-full bg-tiki-ocean border border-white/12 focus:border-tiki-gold rounded-xl px-4 py-3 text-white placeholder-white/20 outline-none text-sm" />
+            </div>
+
+            <div className="flex gap-3 pt-2">
+              <button onClick={addItem} disabled={saving || !form.url}
+                className="bg-tiki-gold hover:bg-tiki-gold-dark text-tiki-ocean font-bold py-2.5 px-6 rounded-xl text-sm transition-colors disabled:opacity-50">
+                {saving ? "Ajout..." : "Ajouter"}
+              </button>
+              <button onClick={() => setAdding(false)}
+                className="px-5 border border-white/15 text-white/50 hover:text-white rounded-xl text-sm transition-colors">
+                Annuler
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Grille galerie */}
+      {loading ? (
+        <div className="text-white/30 text-sm">Chargement...</div>
+      ) : items.length === 0 ? (
+        <div className="bg-tiki-ocean-mid border border-white/8 rounded-2xl p-12 text-center">
+          <ImageIcon size={32} className="text-white/20 mx-auto mb-3" />
+          <p className="text-white/30 text-sm">Aucun élément dans la galerie</p>
+          <button onClick={() => setAdding(true)} className="text-tiki-gold text-sm hover:underline mt-2">
+            Ajouter le premier
+          </button>
+        </div>
+      ) : (
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+          {items.map((item) => {
+            const ytId = item.type === "video" ? getYouTubeId(item.url) : null;
+            const thumbUrl = ytId ? `https://img.youtube.com/vi/${ytId}/mqdefault.jpg` : item.url;
+
+            return (
+              <div key={item.id} className="group relative bg-tiki-ocean-mid rounded-xl overflow-hidden border border-white/8 hover:border-white/20 transition-all">
+                {/* Thumbnail */}
+                <div className="relative aspect-video">
+                  <Image src={thumbUrl} alt={item.caption || ""} fill className="object-cover" sizes="300px"
+                    onError={(e) => { (e.target as HTMLImageElement).src = "data:image/svg+xml,<svg/>"; }} />
+                  {item.type === "video" && (
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/30">
+                      <div className="w-10 h-10 rounded-full bg-tiki-red/80 flex items-center justify-center">
+                        <PlayCircle size={18} className="text-white" />
+                      </div>
+                    </div>
+                  )}
+                  {/* Overlay actions */}
+                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <button onClick={() => deleteItem(item.id)}
+                      className="w-9 h-9 rounded-full bg-red-500/80 hover:bg-red-500 flex items-center justify-center transition-colors">
+                      <Trash2 size={15} className="text-white" />
+                    </button>
+                  </div>
+                </div>
+                {/* Info */}
+                <div className="p-2.5">
+                  <div className="flex items-center gap-1.5">
+                    <GripVertical size={12} className="text-white/20 cursor-grab" />
+                    {item.type === "video" ? (
+                      <PlayCircle size={11} className="text-red-400" />
+                    ) : (
+                      <ImageIcon size={11} className="text-tiki-lagon-light" />
+                    )}
+                    <span className="text-white/40 text-xs truncate">{item.caption || item.url.split("/").pop()}</span>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  );
+}

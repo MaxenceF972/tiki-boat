@@ -1,0 +1,105 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model Reservation {
+  id              String   @id @default(cuid())
+  excursionId     String
+  excursionTitle  String
+  date            String
+  adults          Int
+  children        Int
+  infants         Int      @default(0)
+  source          String   @default("online")
+  totalPrice      Float
+  depositAmount   Float
+  paymentType     String   @default("deposit")
+  status          String   @default("pending")
+  isPaid          Boolean  @default(false)
+  customerName    String
+  customerEmail   String
+  customerPhone   String
+  stripeSessionId String?
+  notes           String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+model Availability {
+  id          String   @id @default(cuid())
+  date        String
+  excursionId String
+  maxSpots    Int      @default(12)
+  bookedSpots Int      @default(0)
+  isBlocked   Boolean  @default(false)
+  blockReason String?
+  createdAt   DateTime @default(now())
+
+  @@unique([date, excursionId])
+}
+
+model SiteContent {
+  id        String   @id
+  value     String
+  updatedAt DateTime @updatedAt
+}
+
+model Excursion {
+  id             String   @id @default(cuid())
+  slug           String   @unique
+  title          String
+  subtitle       String
+  description    String
+  duration       String
+  departureTime  String
+  returnTime     String
+  departurePoint String
+  maxPassengers  Int      @default(12)
+  priceAdult     Float
+  priceChild     Float
+  pricePrivate   Float?
+  included       String   // JSON array
+  notIncluded    String   // JSON array
+  highlights     String   // JSON array
+  images         String   // JSON array
+  youtubeId      String?
+  badge          String?
+  popular        Boolean  @default(false)
+  isActive       Boolean  @default(true)
+  sortOrder      Int      @default(0)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+model BlogPost {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  title       String
+  excerpt     String   @default("")
+  category    String   @default("Guide")
+  date        String
+  readTime    Int      @default(5)
+  coverImage  String   @default("/photos/blog.jpg")
+  coverLabel  String   @default("")
+  keywords    String   @default("")  // virgule-séparées
+  content     String   @default("")  // ## h2, ### h3, - liste, texte brut = paragraphe
+  isPublished Boolean  @default(true)
+  sortOrder   Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model GalleryItem {
+  id        String   @id @default(cuid())
+  type      String   @default("photo")
+  url       String
+  caption   String?
+  sortOrder Int      @default(0)
+  createdAt DateTime @default(now())
+}
