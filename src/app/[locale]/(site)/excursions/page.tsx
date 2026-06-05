@@ -110,10 +110,10 @@ export default function ExcursionsPage() {
 
       {/* Excursions — 1 section sur 2 */}
       {excursions.map((exc, index) => (
-        <section
-          key={exc.id}
-          className={`py-20 ${index % 2 === 0 ? "bg-white" : "bg-sky-50"}`}
-        >
+        <div key={exc.id}>
+          <section
+            className={`py-20 ${index % 2 === 0 ? "bg-white" : "bg-sky-50"}`}
+          >
           <div className="max-w-6xl mx-auto px-5 sm:px-8 lg:px-10">
             <div
               className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
@@ -208,13 +208,14 @@ export default function ExcursionsPage() {
             </div>
           </div>
         </section>
-        {index < excursions.length - 1 && (
-          <WaveDivider
-            topColor={index % 2 === 0 ? "#ffffff" : "#f0f9ff"}
-            bottomColor={index % 2 === 0 ? "#f0f9ff" : "#ffffff"}
-            flip={index % 2 === 1}
-          />
-        )}
+          {index < excursions.length - 1 && (
+            <WaveDivider
+              topColor={index % 2 === 0 ? "#ffffff" : "#f0f9ff"}
+              bottomColor={index % 2 === 0 ? "#f0f9ff" : "#ffffff"}
+              flip={index % 2 === 1}
+            />
+          )}
+        </div>
       ))}
 
       <WaveDivider topColor={excursions.length % 2 === 0 ? "#f0f9ff" : "#ffffff"} bottomColor="#ffffff" />
