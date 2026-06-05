@@ -64,7 +64,7 @@ export default async function HomePage() {
                 Une journée en mer <span className="text-tiki-gold">inoubliable</span> en Guadeloupe.
               </h1>
 
-              <p className="text-slate-700 text-base leading-relaxed mb-10 max-w-md"
+              <p className="text-white/90 text-base leading-relaxed mb-10 max-w-md"
                  style={{ textShadow: "0 1px 12px rgba(0,0,0,0.8)" }}>
                 Snorkeling, îlets sauvages et repas créole les pieds dans l&apos;eau. Une expérience unique dans le Grand Cul de Sac Marin.
               </p>
