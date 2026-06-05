@@ -1,0 +1,305 @@
+{
+  "nav": {
+    "excursions": "Excursions",
+    "galerie": "Gallery",
+    "avis": "Reviews",
+    "blog": "Blog",
+    "contact": "Contact",
+    "reserver": "Book now"
+  },
+  "footer": {
+    "tagline": "Boat excursions in Guadeloupe",
+    "description": "Experience an unforgettable day in the Grand Cul de Sac Marin — Guadeloupe's largest lagoon. Snorkeling, wild islets, and a Creole meal with your feet in the water... A day like nowhere else.",
+    "excursions": "Excursions",
+    "links": {
+      "croisiere": "Full-day cruise",
+      "privatisation": "Private charter",
+      "reserver": "Book"
+    },
+    "info": "Information",
+    "infoLinks": {
+      "galerie": "Gallery",
+      "avis": "Reviews",
+      "blog": "Blog",
+      "contact": "Contact"
+    },
+    "contact": "Contact",
+    "tel": "Phone / WhatsApp",
+    "zone": "Area",
+    "zoneValue": "Guadeloupe",
+    "copyright": "© {year} Tiki Boat — All rights reserved",
+    "mentions": "Legal notice",
+    "cgv": "Terms & Conditions",
+    "confidentialite": "Privacy Policy"
+  },
+  "home": {
+    "hero": {
+      "title": "An {highlight} day at sea in Guadeloupe.",
+      "highlight": "unforgettable",
+      "subtitle": "Snorkeling, wild islets and a Creole meal with your feet in the water. A unique experience in the Grand Cul de Sac Marin.",
+      "cta": "Book now",
+      "ourExcursions": "Our excursions",
+      "perAdult": "/ adult"
+    },
+    "features": {
+      "badge": "Why Tiki Boat",
+      "title": "An experience crafted down to the last detail",
+      "subtitle": "On board the Tiki Boat, everything is taken care of so you can fully enjoy your day — from boarding to return.",
+      "items": {
+        "securite": { "label": "Certified safety", "desc": "Licensed captain, approved equipment" },
+        "comite": { "label": "Small group", "desc": "Maximum 12 passengers per trip" },
+        "snorkeling": { "label": "Snorkeling included", "desc": "Mask, snorkel and fins on board" },
+        "adapte": { "label": "Suitable for all", "desc": "Babies, children, seniors — everyone" },
+        "repas": { "label": "Creole meal included", "desc": "Chef on board, 100% fresh produce" },
+        "bar": { "label": "Unique floating bar", "desc": "Original and unique in Guadeloupe" }
+      }
+    },
+    "excursions": {
+      "badge": "Our sea trips",
+      "title": "Choose your adventure",
+      "details": "Details",
+      "reserver": "Book",
+      "devis": "Quote",
+      "surDevis": "On request",
+      "basseSaison": "Low season",
+      "perAdult": "/ adult"
+    },
+    "inclus": {
+      "badge": "All inclusive",
+      "title": "Zero hidden fees.",
+      "subtitle": "The displayed price is the real price. Meals, drinks, snorkeling, guide — everything is included.",
+      "items": [
+        "Round-trip boat transfer",
+        "Glass-bottom boat (coral viewing)",
+        "Mask, snorkel and fins",
+        "Welcome Creole aperitif",
+        "Full Creole meal (Chef on board, 100% fresh)",
+        "Unlimited drinks",
+        "Naturalist guide",
+        "Unique floating bar in Guadeloupe"
+      ]
+    },
+    "lagon": {
+      "badge": "Our playground",
+      "title": "The largest lagoon in the Lesser Antilles",
+      "subtitle": "The Grand Cul de Sac Marin is a natural paradise listed as a National Park. Crystal-clear waters, exceptional biodiversity, wild islets — our exclusive playground.",
+      "items": [
+        "Islets Caret, Fajou, la Biche, bird islet",
+        "Preserved coral reef",
+        "Submerged wreck & mangrove",
+        "Salt river & seabed",
+        "Snorkeling in the heart of the National Park"
+      ]
+    },
+    "avis": {
+      "badge": "Customer reviews",
+      "title": "They lived it",
+      "rating": "/ 5 · 600+ reviews",
+      "tripadvisor": "Tripadvisor",
+      "google": "Google Reviews"
+    },
+    "tarifs": {
+      "badge": "Pricing",
+      "title": "Transparent. All inclusive.",
+      "subtitle": "30% deposit at booking — balance due on the day.",
+      "meilleureVente": "Best seller",
+      "croisiereTitle": "Full-day cruise",
+      "croisiereHoraires": "Grand Cul de Sac Marin — 09:00→16:00",
+      "adulte": "Adult",
+      "enfant": "Child 3–12 yrs",
+      "gratuit": "Free",
+      "moinsDe3Ans": "Under 3 years",
+      "reserver": "Book this excursion",
+      "privatisationTitle": "Private charter",
+      "privatisationSubtitle": "Birthday · Hen/Stag party · Wedding · Corporate",
+      "journeePrivee": "Full private day",
+      "demanderDevis": "Request a quote"
+    },
+    "cta": {
+      "title": "Ready to set sail?",
+      "subtitle": "Book now and experience a day like nowhere else.",
+      "reserver": "Book now",
+      "whatsapp": "WhatsApp"
+    }
+  },
+  "excursionsPage": {
+    "title": "Our excursions",
+    "subtitle": "Cruises, snorkeling, private charters — choose the adventure that suits you.",
+    "basseSaison": "Low season",
+    "enfant": "Child",
+    "details": "Details",
+    "reserver": "Book",
+    "demanderDevis": "Request a quote",
+    "surDevis": "On request",
+    "aPartirDe": "from",
+    "faq": {
+      "title": "Frequently asked questions",
+      "items": [
+        { "q": "Is the meal included in the price?", "a": "Yes! The full-day cruise includes a Creole aperitif and a full meal prepared by our chef with 100% fresh produce." },
+        { "q": "Is it suitable for children and elderly people?", "a": "Absolutely. Tiki Boat is designed for all ages, from babies to seniors. The boat is stable and safe." },
+        { "q": "What happens in bad weather?", "a": "In the event of unfavourable weather conditions, the trip is postponed or fully refunded. Your safety comes first." },
+        { "q": "How can I book?", "a": "Online on this website (secure payment), by WhatsApp at +590 690 49 58 48, or by phone." }
+      ]
+    }
+  },
+  "excursionDetail": {
+    "duree": "Duration",
+    "heureDepart": "Departure time",
+    "capacite": "Capacity",
+    "pointRdv": "Meeting point",
+    "maxPassengers": "Max {n}",
+    "lexperience": "The experience",
+    "auProgramme": "On the programme",
+    "toutCompris": "INCLUDED",
+    "nonInclus": "NOT INCLUDED",
+    "voirVideo": "Watch the video",
+    "surDevis": "On request",
+    "aPartirDe": "from",
+    "basseSaison": "Low season",
+    "hauteSaison": "High season",
+    "enfant": "Child (3–12 yrs)",
+    "moinsDe2Ans": "Under 2 years: Free",
+    "depart": "Departure",
+    "retour": "Return",
+    "capaciteLabel": "Capacity",
+    "demanderDevis": "Request a quote",
+    "reserver": "Book",
+    "autresExcursions": "Other excursions",
+    "decouvrir": "Discover"
+  },
+  "booking": {
+    "title": "Book your adventure",
+    "subtitle": "Choose your excursion, date and proceed to secure payment. Instant confirmation by email.",
+    "steps": {
+      "excursion": "Excursion",
+      "date": "Date",
+      "infos": "Info",
+      "paiement": "Payment"
+    },
+    "step1": {
+      "title": "Which excursion?",
+      "privatisation": "For a {link}, contact us for a quote.",
+      "privatisationLink": "private charter"
+    },
+    "step2": {
+      "title": "Date & passengers",
+      "dateLabel": "Excursion date *",
+      "passagersLabel": "Number of passengers",
+      "adultes": "Adults",
+      "adultesAge": "13 and over",
+      "enfants": "Children",
+      "enfantsAge": "3–12 years",
+      "bebes": "Babies",
+      "bebesAge": "Under 3 years",
+      "gratuit": "Free",
+      "parPers": "/ person",
+      "maxCapacity": "Maximum capacity: {n} passengers"
+    },
+    "step3": {
+      "title": "Your details",
+      "nomLabel": "Full name *",
+      "emailLabel": "Email *",
+      "telLabel": "Phone *",
+      "notesLabel": "Special requests",
+      "notesSub": "(allergy, accessibility, special request…)",
+      "nomPh": "John Smith",
+      "emailPh": "john@email.com",
+      "telPh": "+590 690 00 00 00",
+      "notesPh": "Food allergy, high chair for baby…"
+    },
+    "step4": {
+      "title": "Payment",
+      "recapTitle": "Summary",
+      "excursion": "Excursion",
+      "date": "Date",
+      "passagers": "Passengers",
+      "adults": "{n} adult",
+      "adultsPlural": "{n} adults",
+      "children": "{n} child",
+      "childrenPlural": "{n} children",
+      "infants": "{n} baby",
+      "infantsPlural": "{n} babies",
+      "total": "Total",
+      "acompteOption": "Pay the deposit (30%)",
+      "acompteSub": "Balance due on the day",
+      "fullOption": "Pay in full",
+      "fullSub": "Secure online payment",
+      "secure": "100% secure payment",
+      "secureSub": "SSL encrypted · Visa, Mastercard, American Express",
+      "payButton": "Pay {amount} €",
+      "loading": "Redirecting…"
+    },
+    "suivant": "Next",
+    "retour": "Back",
+    "calendar": {
+      "selectionne": "Selected",
+      "complet": "Full"
+    }
+  },
+  "confirmation": {
+    "title": "Booking confirmed!",
+    "subtitle": "Thank you {name}! Your booking for {excursion} is confirmed. A confirmation email has been sent to you.",
+    "details": "Your booking details",
+    "date": "Date",
+    "excursion": "Excursion",
+    "passagers": "Passengers",
+    "total": "Total",
+    "acompte": "Deposit paid",
+    "solde": "Balance due on the day",
+    "retourAccueil": "Back to home",
+    "nouvelleResa": "New booking"
+  },
+  "contact": {
+    "title": "Contact us",
+    "subtitle": "A question, a charter request or just want to know more? We reply quickly!",
+    "coordonnees": "Our contact details",
+    "tel": "Phone & WhatsApp",
+    "telSub": "Quick reply on WhatsApp",
+    "email": "Email",
+    "zone": "Area",
+    "zoneValue": "Guadeloupe",
+    "zoneDepart": "Departure: Marina de Pointe-à-Pitre / Le Gosier",
+    "dispo": "Availability",
+    "dispoValue": "7 days/7 — Reply within 24h",
+    "whatsapp": "Write on WhatsApp",
+    "formTitle": "Send a message",
+    "nom": "Name *",
+    "emailLabel": "Email *",
+    "telephone": "Phone",
+    "sujet": "Subject *",
+    "message": "Message *",
+    "envoyer": "Send message",
+    "envoi": "Sending...",
+    "success": "Message sent!",
+    "successSub": "We will reply within 24 hours.",
+    "subjects": {
+      "info": "Information request",
+      "reservation": "Booking assistance",
+      "privatisation": "Private charter",
+      "groupe": "Group booking",
+      "autre": "Other"
+    }
+  },
+  "galerie": {
+    "title": "Our gallery",
+    "subtitle": "The most beautiful images from our excursions — islets, snorkeling, Creole meals, sunsets.",
+    "videos": "Videos",
+    "photos": "Photos",
+    "social": "Follow our adventures",
+    "socialSub": "Find even more photos and videos on our social media. Tag us in your photos!",
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "youtube": "YouTube"
+  },
+  "avis": {
+    "title": "Customer reviews",
+    "subtitle": "What our passengers say about their experience on board Tiki Boat.",
+    "badge": "They talk about us",
+    "readMore": "Read all reviews",
+    "google": "View on Google",
+    "tripadvisor": "View on TripAdvisor"
+  },
+  "whatsapp": {
+    "message": "Hello! I would like information about Tiki Boat."
+  }
+}

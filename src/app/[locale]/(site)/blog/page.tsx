@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { Clock } from "lucide-react";
 import { formatBlogDate } from "@/data/blog";
 import { getPublishedPosts } from "@/lib/blog-db";

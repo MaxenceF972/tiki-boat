@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { Clock, ArrowLeft, ChevronRight } from "lucide-react";
 import { formatBlogDate } from "@/data/blog";
 import { getPublishedPosts, getPostBySlug, parseContent } from "@/lib/blog-db";

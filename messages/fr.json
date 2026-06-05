@@ -1,0 +1,305 @@
+{
+  "nav": {
+    "excursions": "Excursions",
+    "galerie": "Galerie",
+    "avis": "Avis",
+    "blog": "Blog",
+    "contact": "Contact",
+    "reserver": "Réserver"
+  },
+  "footer": {
+    "tagline": "Excursions en Guadeloupe",
+    "description": "Vivez une expérience inoubliable dans le Grand Cul de Sac Marin — le plus grand lagon de Guadeloupe. Snorkeling, îlets, repas créole les pieds dans l'eau... Une journée comme nulle part ailleurs.",
+    "excursions": "Excursions",
+    "links": {
+      "croisiere": "Croisière journée",
+      "privatisation": "Privatisation",
+      "reserver": "Réserver"
+    },
+    "info": "Informations",
+    "infoLinks": {
+      "galerie": "Galerie",
+      "avis": "Avis clients",
+      "blog": "Blog",
+      "contact": "Contact"
+    },
+    "contact": "Contact",
+    "tel": "Téléphone / WhatsApp",
+    "zone": "Zone",
+    "zoneValue": "Guadeloupe",
+    "copyright": "© {year} Tiki Boat — Tous droits réservés",
+    "mentions": "Mentions légales",
+    "cgv": "CGV",
+    "confidentialite": "Politique de confidentialité"
+  },
+  "home": {
+    "hero": {
+      "title": "Une journée en mer {highlight} en Guadeloupe.",
+      "highlight": "inoubliable",
+      "subtitle": "Snorkeling, îlets sauvages et repas créole les pieds dans l'eau. Une expérience unique dans le Grand Cul de Sac Marin.",
+      "cta": "Réserver maintenant",
+      "ourExcursions": "Nos excursions",
+      "perAdult": "/ adulte"
+    },
+    "features": {
+      "badge": "Pourquoi Tiki Boat",
+      "title": "Une expérience pensée dans les moindres détails",
+      "subtitle": "À bord du Tiki Boat, tout est prévu pour que vous profitiez pleinement de votre journée — de l'embarquement au retour.",
+      "items": {
+        "securite": { "label": "Sécurité certifiée", "desc": "Capitaine diplômé, équipements homologués" },
+        "comite": { "label": "Petit comité", "desc": "Maximum 12 passagers par sortie" },
+        "snorkeling": { "label": "Snorkeling inclus", "desc": "Masque, tuba et palmes à bord" },
+        "adapte": { "label": "Adapté à tous", "desc": "Bébés, enfants, seniors — tout le monde" },
+        "repas": { "label": "Repas créole inclus", "desc": "Chef à bord, 100% produits frais" },
+        "bar": { "label": "Bar flottant unique", "desc": "Original et unique en Guadeloupe" }
+      }
+    },
+    "excursions": {
+      "badge": "Nos sorties en mer",
+      "title": "Choisissez votre aventure",
+      "details": "Détails",
+      "reserver": "Réserver",
+      "devis": "Devis",
+      "surDevis": "Sur devis",
+      "basseSaison": "Basse saison",
+      "perAdult": "/ adulte"
+    },
+    "inclus": {
+      "badge": "Tout compris",
+      "title": "Zéro mauvaise surprise.",
+      "subtitle": "Le prix affiché est le prix réel. Repas, boissons, snorkeling, guide — tout est inclus dans le tarif.",
+      "items": [
+        "Transport bateau aller-retour",
+        "Fond de verre (visite des coraux)",
+        "Masque, tuba et palmes",
+        "Apéritif créole de bienvenue",
+        "Repas créole complet (Chef à bord, 100% frais)",
+        "Boissons à volonté",
+        "Guide naturaliste",
+        "Bar flottant unique en Guadeloupe"
+      ]
+    },
+    "lagon": {
+      "badge": "Notre terrain de jeu",
+      "title": "Le plus grand lagon des Petites Antilles",
+      "subtitle": "Le Grand Cul de Sac Marin est un paradis naturel classé Parc National. Eaux cristallines, biodiversité exceptionnelle, îlets sauvages — notre terrain de jeu exclusif.",
+      "items": [
+        "Îlets Caret, Fajou, la Biche, îlet aux oiseaux",
+        "Barrière de corail préservée",
+        "Épave immergée & mangrove",
+        "Rivière salée & fonds marins",
+        "Snorkeling en cœur de Parc National"
+      ]
+    },
+    "avis": {
+      "badge": "Avis clients",
+      "title": "Ils l'ont vécu",
+      "rating": "/ 5 · 600+ avis",
+      "tripadvisor": "Tripadvisor",
+      "google": "Google Reviews"
+    },
+    "tarifs": {
+      "badge": "Tarifs",
+      "title": "Transparent. Tout compris.",
+      "subtitle": "Acompte de 30% à la réservation — solde le jour J.",
+      "meilleureVente": "Meilleure vente",
+      "croisiereTitle": "Croisière journée",
+      "croisiereHoraires": "Grand Cul de Sac Marin — 09h00→16h00",
+      "adulte": "Adulte",
+      "enfant": "Enfant 3–12 ans",
+      "gratuit": "Gratuit",
+      "moinsDe3Ans": "Moins de 3 ans",
+      "reserver": "Réserver cette excursion",
+      "privatisationTitle": "Privatisation",
+      "privatisationSubtitle": "Anniversaire · EVJF · Mariage · Entreprise",
+      "journeePrivee": "Journée privée",
+      "demanderDevis": "Demander un devis"
+    },
+    "cta": {
+      "title": "Prêt pour le grand large ?",
+      "subtitle": "Réservez maintenant et vivez une journée comme nulle part ailleurs.",
+      "reserver": "Réserver maintenant",
+      "whatsapp": "WhatsApp"
+    }
+  },
+  "excursionsPage": {
+    "title": "Nos excursions",
+    "subtitle": "Croisières, snorkeling, privatisation — choisissez l'aventure qui vous correspond.",
+    "basseSaison": "Basse saison",
+    "enfant": "Enfant",
+    "details": "Détails",
+    "reserver": "Réserver",
+    "demanderDevis": "Demander un devis",
+    "surDevis": "Sur devis",
+    "aPartirDe": "à partir de",
+    "faq": {
+      "title": "Questions fréquentes",
+      "items": [
+        { "q": "Le repas est-il inclus dans le tarif ?", "a": "Oui ! La croisière journée inclut un apéritif créole et un repas complet préparé par notre chef avec 100% de produits frais." },
+        { "q": "C'est adapté aux enfants et aux personnes âgées ?", "a": "Absolument. Tiki Boat est conçu pour tous les âges, des bébés aux séniors. Le bateau est stable et sécurisé." },
+        { "q": "Que se passe-t-il en cas de mauvais temps ?", "a": "En cas de conditions météo défavorables, la sortie est reportée ou remboursée intégralement. Votre sécurité prime." },
+        { "q": "Comment puis-je réserver ?", "a": "En ligne sur ce site (paiement sécurisé), par WhatsApp au +590 690 49 58 48, ou par téléphone." }
+      ]
+    }
+  },
+  "excursionDetail": {
+    "duree": "Durée",
+    "heureDepart": "Heure départ",
+    "capacite": "Capacité",
+    "pointRdv": "Point de RDV",
+    "maxPassengers": "Max {n}",
+    "lexperience": "L'expérience",
+    "auProgramme": "Au programme",
+    "toutCompris": "TOUT COMPRIS",
+    "nonInclus": "NON INCLUS",
+    "voirVideo": "Voir la vidéo",
+    "surDevis": "Sur devis",
+    "aPartirDe": "à partir de",
+    "basseSaison": "Basse saison",
+    "hauteSaison": "Haute saison",
+    "enfant": "Enfant (3–12 ans)",
+    "moinsDe2Ans": "Moins de 2 ans : Gratuit",
+    "depart": "Départ",
+    "retour": "Retour",
+    "capaciteLabel": "Capacité",
+    "demanderDevis": "Demander un devis",
+    "reserver": "Réserver",
+    "autresExcursions": "Autres excursions",
+    "decouvrir": "Découvrir"
+  },
+  "booking": {
+    "title": "Réservez votre aventure",
+    "subtitle": "Choisissez votre excursion, votre date et procédez au paiement sécurisé. Confirmation instantanée par email.",
+    "steps": {
+      "excursion": "Excursion",
+      "date": "Date",
+      "infos": "Infos",
+      "paiement": "Paiement"
+    },
+    "step1": {
+      "title": "Quelle excursion ?",
+      "privatisation": "Pour une {link}, contactez-nous pour un devis.",
+      "privatisationLink": "privatisation"
+    },
+    "step2": {
+      "title": "Date & passagers",
+      "dateLabel": "Date de l'excursion *",
+      "passagersLabel": "Nombre de passagers",
+      "adultes": "Adultes",
+      "adultesAge": "13 ans et +",
+      "enfants": "Enfants",
+      "enfantsAge": "3–12 ans",
+      "bebes": "Bébés",
+      "bebesAge": "Moins de 3 ans",
+      "gratuit": "Gratuit",
+      "parPers": "/ pers.",
+      "maxCapacity": "Capacité maximale : {n} passagers"
+    },
+    "step3": {
+      "title": "Vos informations",
+      "nomLabel": "Nom complet *",
+      "emailLabel": "Email *",
+      "telLabel": "Téléphone *",
+      "notesLabel": "Remarques particulières",
+      "notesSub": "(allergie, accessibilité, demande spéciale…)",
+      "nomPh": "Jean Dupont",
+      "emailPh": "jean@email.com",
+      "telPh": "+590 690 00 00 00",
+      "notesPh": "Allergie alimentaire, chaise haute pour bébé…"
+    },
+    "step4": {
+      "title": "Paiement",
+      "recapTitle": "Récapitulatif",
+      "excursion": "Excursion",
+      "date": "Date",
+      "passagers": "Passagers",
+      "adults": "{n} adulte",
+      "adultsPlural": "{n} adultes",
+      "children": "{n} enfant",
+      "childrenPlural": "{n} enfants",
+      "infants": "{n} bébé",
+      "infantsPlural": "{n} bébés",
+      "total": "Total",
+      "acompteOption": "Payer l'acompte (30%)",
+      "acompteSub": "Solde à régler le jour J",
+      "fullOption": "Payer le total",
+      "fullSub": "Paiement sécurisé en ligne",
+      "secure": "Paiement 100% sécurisé",
+      "secureSub": "Crypté SSL · Visa, Mastercard, American Express",
+      "payButton": "Payer {amount} €",
+      "loading": "Redirection…"
+    },
+    "suivant": "Suivant",
+    "retour": "Retour",
+    "calendar": {
+      "selectionne": "Sélectionné",
+      "complet": "Complet"
+    }
+  },
+  "confirmation": {
+    "title": "Réservation confirmée !",
+    "subtitle": "Merci {name} ! Votre réservation pour {excursion} est confirmée. Un email de confirmation vous a été envoyé.",
+    "details": "Détails de votre réservation",
+    "date": "Date",
+    "excursion": "Excursion",
+    "passagers": "Passagers",
+    "total": "Total",
+    "acompte": "Acompte réglé",
+    "solde": "Solde le jour J",
+    "retourAccueil": "Retour à l'accueil",
+    "nouvelleResa": "Nouvelle réservation"
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "subtitle": "Une question, une demande de privatisation ou juste envie d'en savoir plus ? On répond rapidement !",
+    "coordonnees": "Nos coordonnées",
+    "tel": "Téléphone & WhatsApp",
+    "telSub": "Réponse rapide sur WhatsApp",
+    "email": "Email",
+    "zone": "Zone géographique",
+    "zoneValue": "Guadeloupe",
+    "zoneDepart": "Départ : Marina de Pointe-à-Pitre / Le Gosier",
+    "dispo": "Disponibilité",
+    "dispoValue": "7j/7 — Réponse sous 24h",
+    "whatsapp": "Écrire sur WhatsApp",
+    "formTitle": "Envoyez un message",
+    "nom": "Nom *",
+    "emailLabel": "Email *",
+    "telephone": "Téléphone",
+    "sujet": "Sujet *",
+    "message": "Message *",
+    "envoyer": "Envoyer le message",
+    "envoi": "Envoi en cours...",
+    "success": "Message envoyé !",
+    "successSub": "Nous vous répondrons sous 24h.",
+    "subjects": {
+      "info": "Demande d'informations",
+      "reservation": "Aide à la réservation",
+      "privatisation": "Privatisation du bateau",
+      "groupe": "Réservation de groupe",
+      "autre": "Autre"
+    }
+  },
+  "galerie": {
+    "title": "Notre galerie",
+    "subtitle": "Les plus belles images de nos excursions — îlets, snorkeling, repas créole, coucher de soleil.",
+    "videos": "Vidéos",
+    "photos": "Photos",
+    "social": "Suivez nos aventures",
+    "socialSub": "Retrouvez encore plus de photos et vidéos sur nos réseaux sociaux. Taguez-nous dans vos photos !",
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "youtube": "YouTube"
+  },
+  "avis": {
+    "title": "Avis clients",
+    "subtitle": "Ce que nos passagers disent de leur expérience à bord du Tiki Boat.",
+    "badge": "Ils en parlent",
+    "readMore": "Lire tous les avis",
+    "google": "Voir sur Google",
+    "tripadvisor": "Voir sur TripAdvisor"
+  },
+  "whatsapp": {
+    "message": "Bonjour ! Je souhaite avoir des informations sur Tiki Boat."
+  }
+}

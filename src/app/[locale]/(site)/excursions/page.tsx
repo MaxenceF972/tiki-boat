@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import SiteImage from "@/components/SiteImage";
 import { ChevronRight, Clock, Users, MapPin } from "lucide-react";
 import { excursions } from "@/data/excursions";
