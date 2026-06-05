@@ -1,10 +1,15 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
-import { Menu, X, Phone } from "lucide-react";
+import { useState, useRef, useEffect } from "react";
+import { Menu, X, Phone, Globe, ChevronDown } from "lucide-react";
 import { useTranslations, useLocale } from "next-intl";
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
+
+const LANGUAGES = [
+  { code: "fr", label: "Français", flag: "🇫🇷" },
+  { code: "en", label: "English",  flag: "🇬🇧" },
+] as const;
 
 const NAV_LINKS = [
   { href: "/excursions", key: "excursions" },
@@ -15,15 +20,31 @@ const NAV_LINKS = [
 ] as const;
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-  const t       = useTranslations("nav");
-  const locale  = useLocale();
+  const [isOpen,     setIsOpen]     = useState(false);
+  const [langOpen,   setLangOpen]   = useState(false);
+  const langRef = useRef<HTMLDivElement>(null);
+  const t        = useTranslations("nav");
+  const locale   = useLocale();
   const pathname = usePathname();
   const router   = useRouter();
 
+  const currentLang = LANGUAGES.find((l) => l.code === locale) ?? LANGUAGES[0];
+
   const switchLocale = (next: string) => {
     router.replace(pathname, { locale: next });
+    setLangOpen(false);
   };
+
+  // Ferme le dropdown si clic en dehors
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (langRef.current && !langRef.current.contains(e.target as Node)) {
+        setLangOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, []);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-tiki-ocean shadow-lg shadow-black/20">
@@ -67,14 +88,35 @@ export default function Navbar() {
               <span>0690 49 58 48</span>
             </a>
 
-            {/* Sélecteur langue */}
-            <button
-              onClick={() => switchLocale(locale === "fr" ? "en" : "fr")}
-              className="hidden md:flex items-center gap-1 text-white/60 hover:text-white text-xs font-bold border border-white/20 hover:border-tiki-gold rounded-full px-2.5 py-1 transition-all"
-              aria-label="Switch language"
-            >
-              {locale === "fr" ? "🇬🇧 EN" : "🇫🇷 FR"}
-            </button>
+            {/* Sélecteur langue — dropdown globe */}
+            <div ref={langRef} className="relative hidden md:block">
+              <button
+                onClick={() => setLangOpen((o) => !o)}
+                className="flex items-center gap-1.5 text-white/70 hover:text-white text-sm transition-colors py-1 px-2 rounded-lg hover:bg-white/5"
+              >
+                <Globe size={15} className="text-tiki-gold" />
+                <span className="font-medium">{currentLang.label}</span>
+                <ChevronDown size={13} className={`transition-transform duration-200 ${langOpen ? "rotate-180" : ""}`} />
+              </button>
+              {langOpen && (
+                <div className="absolute right-0 top-full mt-2 w-36 bg-tiki-ocean-mid border border-white/10 rounded-xl shadow-xl overflow-hidden z-50">
+                  {LANGUAGES.map((lang) => (
+                    <button
+                      key={lang.code}
+                      onClick={() => switchLocale(lang.code)}
+                      className={`w-full flex items-center gap-2.5 px-4 py-2.5 text-sm transition-colors ${
+                        locale === lang.code
+                          ? "text-tiki-gold bg-tiki-gold/10 font-semibold"
+                          : "text-white/70 hover:text-white hover:bg-white/5"
+                      }`}
+                    >
+                      <span>{lang.flag}</span>
+                      <span>{lang.label}</span>
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
 
             <Link href="/reservation"
               className="inline-flex items-center bg-tiki-gold hover:bg-tiki-gold-dark text-tiki-ocean text-xs sm:text-sm font-bold py-2 px-3 sm:px-5 rounded-full transition-all duration-200 whitespace-nowrap min-h-[36px]">
@@ -107,12 +149,21 @@ export default function Navbar() {
                 +590 690 49 58 48
               </a>
               {/* Sélecteur langue mobile */}
-              <button
-                onClick={() => { switchLocale(locale === "fr" ? "en" : "fr"); setIsOpen(false); }}
-                className="flex items-center justify-center w-full gap-2 text-white/60 hover:text-white text-sm py-3 border border-white/10 rounded-xl transition-colors"
-              >
-                {locale === "fr" ? "🇬🇧 Switch to English" : "🇫🇷 Passer en Français"}
-              </button>
+              <div className="flex gap-2">
+                {LANGUAGES.map((lang) => (
+                  <button
+                    key={lang.code}
+                    onClick={() => { switchLocale(lang.code); setIsOpen(false); }}
+                    className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-xl text-sm transition-colors ${
+                      locale === lang.code
+                        ? "bg-tiki-gold/15 text-tiki-gold border border-tiki-gold/30 font-semibold"
+                        : "border border-white/10 text-white/60 hover:text-white"
+                    }`}
+                  >
+                    {lang.flag} {lang.label}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
         </div>
