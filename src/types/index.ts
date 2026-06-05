@@ -11,6 +11,8 @@ export interface Excursion {
   maxPassengers: number;
   priceAdult: number;
   priceChild: number;
+  priceAdultHighSeason?: number;
+  priceChildHighSeason?: number;
   pricePrivate?: number;
   included: string[];
   notIncluded: string[];

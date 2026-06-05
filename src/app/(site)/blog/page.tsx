@@ -37,7 +37,7 @@ export default async function BlogPage() {
       <section className="pt-32 pb-14 bg-tiki-ocean">
         <div className="max-w-5xl mx-auto px-5 sm:px-8 text-center">
           <p className="text-tiki-gold text-xs font-bold tracking-[0.25em] uppercase mb-4">Blog</p>
-          <h1 className="font-display font-black text-white text-3xl sm:text-4xl mb-4">
+          <h1 className="font-display font-black text-slate-800 text-3xl sm:text-4xl mb-4">
             Conseils & guides pour vos excursions en Guadeloupe
           </h1>
           <p className="text-white/45 text-base max-w-xl mx-auto">
@@ -57,7 +57,7 @@ export default async function BlogPage() {
               {/* Article à la une */}
               {featured && (
                 <Link href={`/blog/${featured.slug}`}
-                  className="group block bg-tiki-ocean rounded-2xl overflow-hidden border border-white/8 hover:border-tiki-gold/30 transition-all duration-300 hover:shadow-xl hover:shadow-black/30 hover:-translate-y-0.5">
+                  className="group block bg-white rounded-2xl overflow-hidden border border-slate-200 hover:border-tiki-gold/30 transition-all duration-300 hover:shadow-xl hover:shadow-black/30 hover:-translate-y-0.5">
                   <div className="grid grid-cols-1 sm:grid-cols-2">
                     <div className="relative h-56 sm:h-auto min-h-[220px]">
                       <SiteImage
@@ -68,12 +68,12 @@ export default async function BlogPage() {
                     </div>
                     <div className="p-7 flex flex-col justify-center">
                       <div className="flex items-center gap-3 mb-4">
-                        <span className={`text-xs font-bold px-2.5 py-1 rounded-full border ${CATEGORY_COLORS[featured.category] ?? "bg-white/10 text-white/50 border-white/10"}`}>
+                        <span className={`text-xs font-bold px-2.5 py-1 rounded-full border ${CATEGORY_COLORS[featured.category] ?? "bg-white/10 text-white/50 border-slate-200"}`}>
                           {featured.category}
                         </span>
                         <span className="text-white/25 text-xs">À la une</span>
                       </div>
-                      <h2 className="font-display font-black text-white text-xl leading-tight mb-3 group-hover:text-tiki-gold transition-colors">
+                      <h2 className="font-display font-black text-slate-800 text-xl leading-tight mb-3 group-hover:text-tiki-gold transition-colors">
                         {featured.title}
                       </h2>
                       <p className="text-white/50 text-sm leading-relaxed mb-5 line-clamp-3">
@@ -95,7 +95,7 @@ export default async function BlogPage() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   {rest.map((post: (typeof posts)[number]) => (
                     <Link key={post.slug} href={`/blog/${post.slug}`}
-                      className="group bg-tiki-ocean rounded-2xl overflow-hidden border border-white/8 hover:border-tiki-gold/30 transition-all duration-300 hover:shadow-xl hover:shadow-black/30 hover:-translate-y-0.5 flex flex-col">
+                      className="group bg-white rounded-2xl overflow-hidden border border-slate-200 hover:border-tiki-gold/30 transition-all duration-300 hover:shadow-xl hover:shadow-black/30 hover:-translate-y-0.5 flex flex-col">
                       <div className="relative h-44 overflow-hidden">
                         <SiteImage
                           src={post.coverImage} alt={post.title}
@@ -104,16 +104,16 @@ export default async function BlogPage() {
                         />
                       </div>
                       <div className="p-5 flex flex-col flex-1">
-                        <span className={`text-xs font-bold px-2.5 py-1 rounded-full border self-start mb-3 ${CATEGORY_COLORS[post.category] ?? "bg-white/10 text-white/50 border-white/10"}`}>
+                        <span className={`text-xs font-bold px-2.5 py-1 rounded-full border self-start mb-3 ${CATEGORY_COLORS[post.category] ?? "bg-white/10 text-white/50 border-slate-200"}`}>
                           {post.category}
                         </span>
-                        <h2 className="font-display font-black text-white text-base leading-tight mb-2 flex-1 group-hover:text-tiki-gold transition-colors">
+                        <h2 className="font-display font-black text-slate-800 text-base leading-tight mb-2 flex-1 group-hover:text-tiki-gold transition-colors">
                           {post.title}
                         </h2>
                         <p className="text-white/45 text-sm leading-relaxed mb-4 line-clamp-2">
                           {post.excerpt}
                         </p>
-                        <div className="flex items-center justify-between text-white/30 text-xs pt-3 border-t border-white/8">
+                        <div className="flex items-center justify-between text-white/30 text-xs pt-3 border-t border-slate-200">
                           <span>{formatBlogDate(post.date)}</span>
                           <span className="flex items-center gap-1"><Clock size={11} /> {post.readTime} min</span>
                         </div>

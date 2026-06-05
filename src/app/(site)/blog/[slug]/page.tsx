@@ -80,10 +80,10 @@ export default async function BlogPostPage({ params }: Props) {
           <div className="absolute inset-0 bg-gradient-to-t from-tiki-ocean via-tiki-ocean/50 to-black/20" />
           <div className="absolute bottom-0 left-0 right-0 pb-8 px-5 sm:px-8">
             <div className="max-w-3xl mx-auto">
-              <Link href="/blog" className="inline-flex items-center gap-1.5 text-white/40 hover:text-white text-sm mb-4 transition-colors">
+              <Link href="/blog" className="inline-flex items-center gap-1.5 text-white/40 hover:text-slate-800 text-sm mb-4 transition-colors">
                 <ArrowLeft size={14} /> Retour au blog
               </Link>
-              <h1 className="font-display font-black text-white text-2xl sm:text-3xl lg:text-4xl leading-tight">
+              <h1 className="font-display font-black text-slate-800 text-2xl sm:text-3xl lg:text-4xl leading-tight">
                 {post.title}
               </h1>
             </div>
@@ -95,7 +95,7 @@ export default async function BlogPostPage({ params }: Props) {
       <section className="bg-tiki-ocean py-12">
         <div className="max-w-3xl mx-auto px-5 sm:px-8">
 
-          <div className="flex flex-wrap items-center gap-4 mb-10 pb-6 border-b border-white/10 text-sm text-white/40">
+          <div className="flex flex-wrap items-center gap-4 mb-10 pb-6 border-b border-slate-200 text-sm text-white/40">
             <span className="text-tiki-gold font-medium">{post.category}</span>
             <span>{formatBlogDate(post.date)}</span>
             <span className="flex items-center gap-1.5"><Clock size={13} /> {post.readTime} min de lecture</span>
@@ -104,7 +104,7 @@ export default async function BlogPostPage({ params }: Props) {
           <div className="space-y-6">
             {sections.map((section, i) => {
               if (section.type === "h2") return (
-                <h2 key={i} className="font-display font-black text-white text-xl sm:text-2xl mt-10 mb-2">
+                <h2 key={i} className="font-display font-black text-slate-800 text-xl sm:text-2xl mt-10 mb-2">
                   {section.text}
                 </h2>
               );
@@ -140,17 +140,17 @@ export default async function BlogPostPage({ params }: Props) {
       {related.length > 0 && (
         <section className="bg-tiki-ocean-mid py-14">
           <div className="max-w-3xl mx-auto px-5 sm:px-8">
-            <h2 className="font-display font-black text-white text-xl mb-7">À lire aussi</h2>
+            <h2 className="font-display font-black text-slate-800 text-xl mb-7">À lire aussi</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               {related.map((p) => (
                 <Link key={p.slug} href={`/blog/${p.slug}`}
-                  className="group flex gap-4 bg-tiki-ocean rounded-xl p-4 border border-white/8 hover:border-tiki-gold/30 transition-all">
+                  className="group flex gap-4 bg-tiki-ocean rounded-xl p-4 border border-slate-200 hover:border-tiki-gold/30 transition-all">
                   <div className="relative w-20 h-20 rounded-xl overflow-hidden shrink-0">
                     <SiteImage src={p.coverImage} alt={p.title} label={p.coverLabel || p.title} fill className="object-cover" />
                   </div>
                   <div className="min-w-0">
                     <p className="text-tiki-gold text-xs font-medium mb-1">{p.category}</p>
-                    <p className="text-white text-sm font-bold leading-tight group-hover:text-tiki-gold transition-colors line-clamp-2">{p.title}</p>
+                    <p className="text-slate-800 text-sm font-bold leading-tight group-hover:text-tiki-gold transition-colors line-clamp-2">{p.title}</p>
                     <p className="text-white/30 text-xs mt-1.5">{formatBlogDate(p.date)}</p>
                   </div>
                 </Link>

@@ -3,7 +3,7 @@ import { excursions } from "@/data/excursions";
 
 const resend   = new Resend(process.env.RESEND_API_KEY);
 const FROM     = "Tiki Boat <onboarding@resend.dev>"; // TODO → reservations@tiki-boat.com après vérif domaine
-const ADMIN    = process.env.ADMIN_EMAIL_NOTIF ?? "contact@tiki-boat.com";
+const ADMIN    = process.env.ADMIN_EMAIL_NOTIF ?? "tikiboatguadeloupe@gmail.com";
 const SITE_URL = "https://tiki-boat-iota.vercel.app"; // TODO → https://tiki-boat.com
 
 const LOGO = "https://raw.githubusercontent.com/MaxenceF972/tiki-boat/main/public/logo.png";
@@ -162,7 +162,7 @@ export async function sendConfirmationEmail(data: ReservationData) {
         <p style="font-size:10px;font-weight:700;color:#F5C842;text-transform:uppercase;letter-spacing:0.12em;margin:0 0 12px;">📞 Une question ?</p>
         <table width="100%" cellpadding="0" cellspacing="0" border="0" style="font-size:13px;">
           <tr><td style="color:rgba(255,255,255,0.5);padding:4px 0;">Tél / WhatsApp</td><td align="right"><a href="tel:+590690495848" style="color:#F5C842;font-weight:600;text-decoration:none;">+590 690 49 58 48</a></td></tr>
-          <tr><td style="color:rgba(255,255,255,0.5);padding:4px 0;">Email</td><td align="right"><a href="mailto:contact@tiki-boat.com" style="color:rgba(255,255,255,0.6);text-decoration:none;">contact@tiki-boat.com</a></td></tr>
+          <tr><td style="color:rgba(255,255,255,0.5);padding:4px 0;">Email</td><td align="right"><a href="mailto:tikiboatguadeloupe@gmail.com" style="color:rgba(255,255,255,0.6);text-decoration:none;">tikiboatguadeloupe@gmail.com</a></td></tr>
         </table>
       </td></tr>
     </table>

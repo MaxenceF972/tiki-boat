@@ -51,7 +51,7 @@ function ContactFormInner() {
           <CheckCircle2 className="text-green-400" size={32} />
         </div>
         <h3 className="font-display text-xl font-bold text-tiki-gold mb-2">Message envoyé !</h3>
-        <p className="text-white/50 text-sm">Nous vous répondrons sous 24h.</p>
+        <p className="text-slate-500 text-sm">Nous vous répondrons sous 24h.</p>
       </div>
     );
   }
@@ -60,7 +60,7 @@ function ContactFormInner() {
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label className="block text-white/70 text-sm font-medium mb-1.5">Nom *</label>
+          <label className="block text-slate-700 text-sm font-medium mb-1.5">Nom *</label>
           <input
             type="text" required placeholder="Jean Dupont"
             value={form.name}
@@ -69,7 +69,7 @@ function ContactFormInner() {
           />
         </div>
         <div>
-          <label className="block text-white/70 text-sm font-medium mb-1.5">Email *</label>
+          <label className="block text-slate-700 text-sm font-medium mb-1.5">Email *</label>
           <input
             type="email" required placeholder="jean@email.com"
             value={form.email}
@@ -80,7 +80,7 @@ function ContactFormInner() {
       </div>
 
       <div>
-        <label className="block text-white/70 text-sm font-medium mb-1.5">Téléphone</label>
+        <label className="block text-slate-700 text-sm font-medium mb-1.5">Téléphone</label>
         <input
           type="tel" placeholder="+590 690 00 00 00"
           value={form.phone}
@@ -90,7 +90,7 @@ function ContactFormInner() {
       </div>
 
       <div>
-        <label className="block text-white/70 text-sm font-medium mb-1.5">Sujet *</label>
+        <label className="block text-slate-700 text-sm font-medium mb-1.5">Sujet *</label>
         <div className="relative">
           <select
             value={form.subject}
@@ -110,13 +110,13 @@ function ContactFormInner() {
           </select>
           <ChevronDown
             size={16}
-            className="absolute right-3 top-1/2 -translate-y-1/2 text-white/40 pointer-events-none"
+            className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none"
           />
         </div>
       </div>
 
       <div>
-        <label className="block text-white/70 text-sm font-medium mb-1.5">Message *</label>
+        <label className="block text-slate-700 text-sm font-medium mb-1.5">Message *</label>
         <textarea
           required placeholder="Votre message..."
           value={form.message}

@@ -184,8 +184,8 @@ export default async function ExcursionDetailPage({ params }: Props) {
                 ].map((item) => (
                   <div key={item.label} className="card-dark text-center py-4">
                     <item.icon className="text-tiki-gold mx-auto mb-2" size={22} />
-                    <div className="text-tiki-cream-dark text-xs mb-1">{item.label}</div>
-                    <div className="text-tiki-cream font-semibold text-sm">{item.value}</div>
+                    <div className="text-slate-500 text-xs mb-1">{item.label}</div>
+                    <div className="text-slate-800 font-semibold text-sm">{item.value}</div>
                   </div>
                 ))}
               </div>
@@ -193,7 +193,7 @@ export default async function ExcursionDetailPage({ params }: Props) {
               {/* Description */}
               <div>
                 <h2 className="font-display text-2xl font-bold text-tiki-gold mb-4">L&apos;expérience</h2>
-                <p className="text-tiki-cream leading-relaxed text-lg">{excursion.description}</p>
+                <p className="text-slate-800 leading-relaxed text-lg">{excursion.description}</p>
               </div>
 
               {/* Points forts */}
@@ -201,7 +201,7 @@ export default async function ExcursionDetailPage({ params }: Props) {
                 <h2 className="font-display text-2xl font-bold text-tiki-gold mb-4">Au programme</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {excursion.highlights.map((h) => (
-                    <div key={h} className="flex items-center gap-3 text-tiki-cream">
+                    <div key={h} className="flex items-center gap-3 text-slate-800">
                       <CheckCircle2 className="text-tiki-gold shrink-0" size={18} />
                       {h}
                     </div>
@@ -212,10 +212,10 @@ export default async function ExcursionDetailPage({ params }: Props) {
               {/* Inclus / Non inclus */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
-                  <h3 className="font-bold text-tiki-cream text-lg mb-4">Inclus dans le tarif</h3>
+                  <h3 className="font-bold text-slate-800 text-lg mb-4">Inclus dans le tarif</h3>
                   <ul className="space-y-2">
                     {excursion.included.map((item) => (
-                      <li key={item} className="flex items-start gap-2 text-tiki-cream text-sm">
+                      <li key={item} className="flex items-start gap-2 text-slate-800 text-sm">
                         <CheckCircle2 className="text-green-400 shrink-0 mt-0.5" size={16} />
                         {item}
                       </li>
@@ -223,10 +223,10 @@ export default async function ExcursionDetailPage({ params }: Props) {
                   </ul>
                 </div>
                 <div>
-                  <h3 className="font-bold text-tiki-cream text-lg mb-4">Non inclus</h3>
+                  <h3 className="font-bold text-slate-800 text-lg mb-4">Non inclus</h3>
                   <ul className="space-y-2">
                     {excursion.notIncluded.map((item) => (
-                      <li key={item} className="flex items-start gap-2 text-tiki-cream-dark text-sm">
+                      <li key={item} className="flex items-start gap-2 text-slate-500 text-sm">
                         <XCircle className="text-tiki-red-light shrink-0 mt-0.5" size={16} />
                         {item}
                       </li>
@@ -259,14 +259,14 @@ export default async function ExcursionDetailPage({ params }: Props) {
                   <>
                     <div className="text-center mb-6">
                       <div className="font-display text-3xl font-bold text-tiki-gold mb-1">Sur devis</div>
-                      <p className="text-tiki-cream-dark text-sm">à partir de {formatPrice(excursion.pricePrivate)}</p>
+                      <p className="text-slate-500 text-sm">à partir de {formatPrice(excursion.pricePrivate)}</p>
                     </div>
-                    <div className="space-y-3 mb-6 text-sm text-tiki-cream-dark">
+                    <div className="space-y-3 mb-6 text-sm text-slate-500">
                       <div className="flex justify-between">
-                        <span>Durée</span><span className="text-tiki-cream">{excursion.duration}</span>
+                        <span>Durée</span><span className="text-slate-800">{excursion.duration}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span>Capacité</span><span className="text-tiki-cream">Max {excursion.maxPassengers} pers.</span>
+                        <span>Capacité</span><span className="text-slate-800">Max {excursion.maxPassengers} pers.</span>
                       </div>
                     </div>
                     <Link href="/contact?type=privatisation" className="btn-primary w-full justify-center">
@@ -276,33 +276,46 @@ export default async function ExcursionDetailPage({ params }: Props) {
                   </>
                 ) : (
                   <>
-                    <div className="mb-6">
-                      <div className="flex items-baseline gap-2 mb-1">
-                        <span className="font-display text-3xl font-bold text-tiki-gold">{formatPrice(excursion.priceAdult)}</span>
-                        <span className="text-tiki-cream-dark text-sm">/ adulte</span>
+                    <div className="mb-6 space-y-3">
+                      <div>
+                        <div className="text-xs font-semibold text-tiki-lagon-light uppercase tracking-wider mb-1">Basse saison</div>
+                        <div className="flex items-baseline gap-2 mb-0.5">
+                          <span className="font-display text-3xl font-bold text-tiki-gold">{formatPrice(excursion.priceAdult)}</span>
+                          <span className="text-slate-500 text-sm">/ adulte</span>
+                        </div>
+                        <div className="text-slate-500 text-sm">Enfant (3–12 ans) : {formatPrice(excursion.priceChild)}</div>
                       </div>
-                      <div className="text-tiki-cream-dark text-sm">Enfant (3–12 ans) : {formatPrice(excursion.priceChild)}</div>
-                      <div className="text-tiki-cream-dark text-sm">Moins de 3 ans : Gratuit</div>
+                      {excursion.priceAdultHighSeason && (
+                        <div className="border-t border-slate-200 pt-3">
+                          <div className="text-xs font-semibold text-tiki-gold uppercase tracking-wider mb-1">Haute saison</div>
+                          <div className="flex items-baseline gap-2 mb-0.5">
+                            <span className="font-display text-2xl font-bold text-tiki-gold">{formatPrice(excursion.priceAdultHighSeason)}</span>
+                            <span className="text-slate-500 text-sm">/ adulte</span>
+                          </div>
+                          <div className="text-slate-500 text-sm">Enfant (3–12 ans) : {formatPrice(excursion.priceChildHighSeason!)}</div>
+                        </div>
+                      )}
+                      <div className="text-slate-500 text-sm">Moins de 2 ans : Gratuit</div>
                     </div>
-                    <div className="space-y-3 mb-6 text-sm text-tiki-cream-dark border-t border-tiki-gold/20 pt-4">
+                    <div className="space-y-3 mb-6 text-sm text-slate-500 border-t border-tiki-gold/20 pt-4">
                       <div className="flex justify-between">
-                        <span>Durée</span><span className="text-tiki-cream">{excursion.duration}</span>
+                        <span>Durée</span><span className="text-slate-800">{excursion.duration}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span>Départ</span><span className="text-tiki-cream">{excursion.departureTime}</span>
+                        <span>Départ</span><span className="text-slate-800">{excursion.departureTime}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span>Retour</span><span className="text-tiki-cream">{excursion.returnTime}</span>
+                        <span>Retour</span><span className="text-slate-800">{excursion.returnTime}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span>Capacité</span><span className="text-tiki-cream">Max {excursion.maxPassengers} pers.</span>
+                        <span>Capacité</span><span className="text-slate-800">Max {excursion.maxPassengers} pers.</span>
                       </div>
                     </div>
                     <Link href={`/reservation?excursion=${excursion.slug}`} className="btn-primary w-full justify-center mb-3">
                       Réserver maintenant
                       <ChevronRight size={16} />
                     </Link>
-                    <div className="flex items-center gap-2 justify-center text-xs text-tiki-cream-dark">
+                    <div className="flex items-center gap-2 justify-center text-xs text-slate-500">
                       <CheckCircle2 size={14} className="text-tiki-gold" />
                       Acompte de 30% — annulation gratuite
                     </div>
@@ -315,9 +328,9 @@ export default async function ExcursionDetailPage({ params }: Props) {
                     {[...Array(5)].map((_, i) => (
                       <Star key={i} className="text-tiki-gold fill-tiki-gold" size={14} />
                     ))}
-                    <span className="text-tiki-cream text-sm font-bold ml-1">4.8/5</span>
+                    <span className="text-slate-800 text-sm font-bold ml-1">4.8/5</span>
                   </div>
-                  <p className="text-center text-tiki-cream-dark text-xs mt-1">400+ avis vérifiés</p>
+                  <p className="text-center text-slate-500 text-xs mt-1">400+ avis vérifiés</p>
                 </div>
               </div>
             </div>

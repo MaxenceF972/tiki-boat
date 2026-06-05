@@ -23,7 +23,7 @@ const CONTENT_FIELDS = {
   ],
   "Contact & Infos pratiques": [
     { id: "contact.phone",     label: "Téléphone",              type: "text", ph: "+590 690 49 58 48" },
-    { id: "contact.email",     label: "Email",                  type: "text", ph: "contact@tiki-boat.com" },
+    { id: "contact.email",     label: "Email",                  type: "text", ph: "tikiboatguadeloupe@gmail.com" },
     { id: "contact.departure", label: "Point de départ",        type: "text", ph: "Marina de Pointe-à-Pitre / Le Gosier" },
     { id: "contact.zone",      label: "Zone géographique",      type: "text", ph: "Guadeloupe" },
     { id: "deposit.percent",   label: "Acompte (%)",            type: "number", ph: "30" },

@@ -93,7 +93,7 @@ const organizationJsonLd = {
         "Excursions en bateau en Guadeloupe : croisière journée Grand Cul de Sac Marin, coucher de soleil, privatisation. Snorkeling, repas créole, îlets Caret, barrière de corail.",
       url: BASE,
       telephone: "+590690495848",
-      email: "contact@tiki-boat.com",
+      email: "tikiboatguadeloupe@gmail.com",
       image: `${BASE}/logo.png`,
       logo: {
         "@type": "ImageObject",

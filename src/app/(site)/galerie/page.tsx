@@ -34,7 +34,7 @@ export default function GaleriePage() {
   return (
     <>
       {/* Header */}
-      <section className="pt-32 pb-16 bg-tiki-dark-2 relative overflow-hidden">
+      <section className="pt-32 pb-16 bg-sky-50 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-tiki-red/10 to-transparent" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 
@@ -64,9 +64,9 @@ export default function GaleriePage() {
                 <div className="p-4">
                   <div className="flex items-center gap-2 mb-1">
                     <Play size={16} className="text-tiki-red" />
-                    <h3 className="font-bold text-tiki-cream">{v.title}</h3>
+                    <h3 className="font-bold text-slate-800">{v.title}</h3>
                   </div>
-                  <p className="text-tiki-cream-dark text-sm">{v.description}</p>
+                  <p className="text-slate-500 text-sm">{v.description}</p>
                 </div>
               </div>
             ))}
@@ -92,7 +92,7 @@ export default function GaleriePage() {
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-tiki-dark/80 to-transparent p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                   <span className="badge text-xs">{photo.category}</span>
-                  <p className="text-tiki-cream text-sm mt-1">{photo.alt}</p>
+                  <p className="text-slate-800 text-sm mt-1">{photo.alt}</p>
                 </div>
               </div>
             ))}
@@ -101,10 +101,10 @@ export default function GaleriePage() {
       </section>
 
       {/* Social CTA */}
-      <section className="py-12 bg-tiki-dark border-t border-tiki-gold/20">
+      <section className="py-12 bg-white border-t border-tiki-gold/20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-display text-2xl font-bold text-tiki-gold mb-3">Suivez nos aventures</h2>
-          <p className="text-tiki-cream-dark mb-6">
+          <p className="text-slate-500 mb-6">
             Retrouvez encore plus de photos et vidéos sur nos réseaux sociaux. Taguez-nous dans vos photos !
           </p>
           <div className="flex gap-4 justify-center">

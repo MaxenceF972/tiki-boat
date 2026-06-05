@@ -11,7 +11,7 @@ export async function POST(req: NextRequest) {
     // TODO: send email via nodemailer when SMTP env vars are configured
     // import nodemailer from "nodemailer";
     // const transporter = nodemailer.createTransport({ ... });
-    // await transporter.sendMail({ from: email, to: "contact@tiki-boat.com", ... });
+    // await transporter.sendMail({ from: email, to: "tikiboatguadeloupe@gmail.com", ... });
 
     return NextResponse.json({ ok: true });
   } catch {

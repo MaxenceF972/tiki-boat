@@ -103,11 +103,11 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="mailto:contact@tiki-boat.com" className="flex items-start gap-3 text-tiki-cream-dark hover:text-tiki-gold transition-colors group">
+                <a href="mailto:tikiboatguadeloupe@gmail.com" className="flex items-start gap-3 text-tiki-cream-dark hover:text-tiki-gold transition-colors group">
                   <Mail size={18} className="mt-0.5 shrink-0 group-hover:text-tiki-gold" />
                   <div>
                     <div className="font-medium text-tiki-cream text-sm">Email</div>
-                    <div className="text-sm">contact@tiki-boat.com</div>
+                    <div className="text-sm">tikiboatguadeloupe@gmail.com</div>
                   </div>
                 </a>
               </li>

@@ -119,7 +119,7 @@ export default function ExcursionsPage() {
             >
               {/* Image */}
               <div
-                className={`relative h-60 sm:h-80 lg:h-[440px] rounded-2xl overflow-hidden border border-white/10 ${
+                className={`relative h-60 sm:h-80 lg:h-[440px] rounded-2xl overflow-hidden border border-slate-200 ${
                   index % 2 === 1 ? "lg:col-start-2" : ""
                 }`}
               >
@@ -154,7 +154,7 @@ export default function ExcursionsPage() {
                   </div>
                 </div>
 
-                <h2 className="font-display text-3xl sm:text-4xl font-black text-white mb-3 leading-tight">
+                <h2 className="font-display text-3xl sm:text-4xl font-black text-slate-800 mb-3 leading-tight">
                   {exc.title}
                 </h2>
                 <p className="text-tiki-gold text-sm font-medium mb-4">{exc.subtitle}</p>
@@ -171,7 +171,7 @@ export default function ExcursionsPage() {
                 </ul>
 
                 {/* Prix + CTA */}
-                <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center pt-6 border-t border-white/10">
+                <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center pt-6 border-t border-slate-200">
                   <div>
                     {exc.pricePrivate ? (
                       <div>
@@ -209,7 +209,7 @@ export default function ExcursionsPage() {
       {/* FAQ */}
       <section className="py-16 bg-tiki-ocean-mid">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-display font-black text-white text-2xl sm:text-3xl text-center mb-10">
+          <h2 className="font-display font-black text-slate-800 text-2xl sm:text-3xl text-center mb-10">
             Questions fréquentes
           </h2>
           <div className="space-y-3">
@@ -231,8 +231,8 @@ export default function ExcursionsPage() {
                 a: "En ligne sur ce site (paiement sécurisé), par WhatsApp au +590 690 49 58 48, ou par téléphone.",
               },
             ].map((item) => (
-              <details key={item.q} className="group border border-white/10 rounded-xl bg-tiki-ocean p-5">
-                <summary className="font-semibold text-white cursor-pointer flex justify-between items-center text-sm">
+              <details key={item.q} className="group border border-slate-200 rounded-xl bg-tiki-ocean p-5">
+                <summary className="font-semibold text-slate-800 cursor-pointer flex justify-between items-center text-sm">
                   {item.q}
                   <ChevronRight size={16} className="text-tiki-gold group-open:rotate-90 transition-transform shrink-0 ml-3" />
                 </summary>

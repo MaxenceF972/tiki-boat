@@ -17,8 +17,8 @@ html {
 
 body {
   font-family: var(--font-sans);
-  background-color: #0A1E2E;
-  color: #E8F4F8;
+  background-color: #f0f9ff;
+  color: #0f172a;
 }
 
 @layer components {
@@ -43,15 +43,15 @@ body {
   }
 
   .section-subtitle {
-    @apply text-tiki-cream-dark text-lg md:text-xl leading-relaxed;
+    @apply text-slate-600 text-lg md:text-xl leading-relaxed;
   }
 
   .card-dark {
-    @apply bg-tiki-ocean-mid border border-tiki-lagon/20 rounded-2xl p-6 hover:border-tiki-gold/40 transition-all duration-300;
+    @apply bg-white border border-tiki-lagon/20 rounded-2xl p-6 hover:border-tiki-gold/40 transition-all duration-300 shadow-sm;
   }
 
   .badge {
-    @apply bg-tiki-lagon/20 text-tiki-lagon-light text-sm font-semibold px-3 py-1 rounded-full border border-tiki-lagon/30;
+    @apply bg-tiki-lagon/15 text-tiki-lagon text-sm font-semibold px-3 py-1 rounded-full border border-tiki-lagon/30;
   }
 
   .badge-gold {
@@ -70,7 +70,7 @@ input, select, textarea {
 
 /* Scrollbar */
 ::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #0A1E2E; }
+::-webkit-scrollbar-track { background: #e0f2fe; }
 ::-webkit-scrollbar-thumb { background: #0891B2; border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: #D4A017; }
 

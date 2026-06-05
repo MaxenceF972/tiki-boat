@@ -23,7 +23,7 @@ interface BookingData {
 }
 
 const inputCls =
-  "w-full bg-tiki-ocean border border-white/15 focus:border-tiki-gold rounded-xl px-4 py-4 text-white placeholder-white/30 outline-none transition-colors";
+  "w-full bg-white border border-slate-200 focus:border-tiki-gold rounded-xl px-4 py-4 text-slate-800 placeholder-white/30 outline-none transition-colors";
 
 function BookingFormInner() {
   const searchParams = useSearchParams();
@@ -78,7 +78,7 @@ function BookingFormInner() {
   };
 
   return (
-    <div className="bg-tiki-ocean-mid rounded-2xl border border-white/10 p-5 sm:p-7">
+    <div className="bg-tiki-ocean-mid rounded-2xl border border-slate-200 p-5 sm:p-7">
 
       {/* Barre de progression */}
       <div className="flex items-center mb-8">
@@ -88,7 +88,7 @@ function BookingFormInner() {
               <div className={`w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold transition-all shrink-0 ${
                 step > s.num  ? "bg-tiki-gold text-tiki-ocean" :
                 step === s.num ? "bg-tiki-red text-white" :
-                "bg-tiki-ocean border border-white/20 text-white/40"
+                "bg-white/10 border border-white/20 text-white/50"
               }`}>
                 {step > s.num ? <CheckCircle2 size={16} /> : s.num}
               </div>
@@ -113,7 +113,7 @@ function BookingFormInner() {
                 className={`flex items-center gap-4 p-4 rounded-xl border-2 cursor-pointer transition-all min-h-[64px] ${
                   data.excursionSlug === exc.slug
                     ? "border-tiki-gold bg-tiki-gold/10"
-                    : "border-white/10 hover:border-tiki-gold/40"
+                    : "border-slate-200 hover:border-tiki-gold/40"
                 }`}>
                 <input type="radio" name="excursion" value={exc.slug}
                   checked={data.excursionSlug === exc.slug}
@@ -127,7 +127,7 @@ function BookingFormInner() {
                 <div className="flex-1 min-w-0">
                   <div className="flex justify-between items-start gap-2 flex-wrap">
                     <div>
-                      <div className="font-bold text-white text-sm leading-tight">{exc.title}</div>
+                      <div className="font-bold text-slate-800 text-sm leading-tight">{exc.title}</div>
                       <div className="text-white/40 text-xs mt-0.5">{exc.duration}</div>
                     </div>
                     <div className="text-right shrink-0">
@@ -138,10 +138,10 @@ function BookingFormInner() {
                 </div>
               </label>
             ))}
-            <div className="flex items-start gap-3 p-4 rounded-xl bg-white/5 border border-white/10">
+            <div className="flex items-start gap-3 p-4 rounded-xl bg-white/5 border border-slate-200">
               <Info size={16} className="text-tiki-gold shrink-0 mt-0.5" />
               <p className="text-white/50 text-sm">
-                Pour une <strong className="text-white">privatisation</strong>,{" "}
+                Pour une <strong className="text-slate-800">privatisation</strong>,{" "}
                 <a href="/contact?type=privatisation" className="text-tiki-gold underline">contactez-nous</a> pour un devis.
               </p>
             </div>
@@ -201,8 +201,8 @@ function BookingFormInner() {
                   <>
                     <div className="grid grid-cols-3 gap-3">
                       {counters.map((p) => (
-                        <div key={p.label} className="bg-tiki-ocean border border-white/10 rounded-xl p-3 text-center">
-                          <div className="text-white font-medium text-sm mb-0.5">{p.label}</div>
+                        <div key={p.label} className="bg-white border border-slate-200 rounded-xl p-3 text-center">
+                          <div className="text-slate-800 font-medium text-sm mb-0.5">{p.label}</div>
                           <div className="text-white/35 text-xs mb-3 leading-tight">{p.sub}</div>
                           <div className="flex items-center justify-center gap-2">
                             <button type="button" onClick={p.onDec}
@@ -299,7 +299,7 @@ function BookingFormInner() {
           <h2 className="font-display text-xl sm:text-2xl font-bold text-tiki-gold mb-5">Récapitulatif & Paiement</h2>
 
           {/* Récap */}
-          <div className="bg-tiki-ocean border border-white/10 rounded-xl p-4 mb-5 space-y-2 text-sm">
+          <div className="bg-white border border-slate-200 rounded-xl p-4 mb-5 space-y-2 text-sm">
             {[
               ["Excursion", excursion.title],
               ["Date", data.date ? new Date(data.date).toLocaleDateString("fr-FR", { day:"numeric", month:"long", year:"numeric" }) : "—"],
@@ -312,10 +312,10 @@ function BookingFormInner() {
             ].map(([l, v]) => (
               <div key={l} className="flex justify-between gap-2">
                 <span className="text-white/40">{l}</span>
-                <span className="text-white text-right">{v}</span>
+                <span className="text-slate-800 text-right">{v}</span>
               </div>
             ))}
-            <div className="flex justify-between font-bold text-tiki-gold border-t border-white/10 pt-2">
+            <div className="flex justify-between font-bold text-tiki-gold border-t border-slate-200 pt-2">
               <span>Total</span><span>{formatPrice(total)}</span>
             </div>
           </div>
@@ -332,7 +332,7 @@ function BookingFormInner() {
             ].map(({ val, title, sub }) => (
               <label key={val}
                 className={`flex items-center gap-4 p-4 rounded-xl border-2 cursor-pointer transition-all min-h-[64px] ${
-                  data.paymentType === val ? "border-tiki-gold bg-tiki-gold/10" : "border-white/10 hover:border-tiki-gold/30"
+                  data.paymentType === val ? "border-tiki-gold bg-tiki-gold/10" : "border-slate-200 hover:border-tiki-gold/30"
                 }`}>
                 <input type="radio" name="payment" value={val}
                   checked={data.paymentType === val}
@@ -344,7 +344,7 @@ function BookingFormInner() {
                   {data.paymentType === val && <div className="w-2.5 h-2.5 rounded-full bg-tiki-gold" />}
                 </div>
                 <div>
-                  <div className="font-bold text-white text-sm">{title}</div>
+                  <div className="font-bold text-slate-800 text-sm">{title}</div>
                   <div className="text-white/40 text-xs mt-0.5">{sub}</div>
                 </div>
               </label>
@@ -363,11 +363,11 @@ function BookingFormInner() {
       )}
 
       {/* Navigation */}
-      <div className="flex justify-between mt-8 pt-5 border-t border-white/10 gap-3">
+      <div className="flex justify-between mt-8 pt-5 border-t border-slate-200 gap-3">
         <button type="button"
           onClick={() => setStep((s) => (s - 1) as Step)}
           disabled={step === 1}
-          className="flex items-center gap-1.5 text-white/50 hover:text-white disabled:opacity-20 disabled:cursor-not-allowed transition-colors font-medium text-sm py-3 px-4 min-h-[48px]">
+          className="flex items-center gap-1.5 text-white/50 hover:text-slate-800 disabled:opacity-20 disabled:cursor-not-allowed transition-colors font-medium text-sm py-3 px-4 min-h-[48px]">
           <ChevronLeft size={18} /> Retour
         </button>
 

@@ -60,7 +60,7 @@ export default async function HomePage() {
 
             {/* GAUCHE — texte */}
             <div className="max-w-xl">
-              <h1 className="font-display font-black text-white leading-[1.08] mb-6"
+              <h1 className="font-display font-black text-slate-800 leading-[1.08] mb-6"
                   style={{ fontSize: "clamp(2rem, 3.8vw, 3.6rem)", textShadow: "0 2px 24px rgba(0,0,0,0.7)" }}>
                 Une journée en mer <span className="text-tiki-gold">inoubliable</span> en Guadeloupe.
               </h1>
@@ -81,9 +81,9 @@ export default async function HomePage() {
               <p className="text-white/40 text-xs uppercase tracking-[0.2em] mb-1">Nos excursions</p>
               {excursions.map((exc) => (
                 <Link key={exc.id} href={`/excursions/${exc.slug}`}
-                  className="flex items-center justify-between px-4 py-3.5 rounded-xl bg-white/10 hover:bg-white/18 backdrop-blur-md border border-white/15 hover:border-tiki-gold/50 transition-all group">
+                  className="flex items-center justify-between px-4 py-3.5 rounded-xl bg-white/10 hover:bg-white/18 backdrop-blur-md border border-slate-200 hover:border-tiki-gold/50 transition-all group">
                   <div>
-                    <div className="text-white font-bold text-sm group-hover:text-tiki-gold transition-colors">{exc.title}</div>
+                    <div className="text-slate-800 font-bold text-sm group-hover:text-tiki-gold transition-colors">{exc.title}</div>
                     <div className="text-white/40 text-xs mt-0.5">{exc.duration}</div>
                   </div>
                   <div className="text-right shrink-0 ml-4">
@@ -112,7 +112,7 @@ export default async function HomePage() {
       {/* ══════════════════════════════════════════
           FEATURES — split photo / grille
       ══════════════════════════════════════════ */}
-      <section className="bg-tiki-ocean-mid py-16 overflow-hidden">
+      <section className="bg-white py-16 overflow-hidden">
         <div className="max-w-6xl mx-auto px-5 sm:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
@@ -131,7 +131,7 @@ export default async function HomePage() {
             {/* DROITE — texte + grille */}
             <div>
               <p className="text-tiki-gold text-xs font-bold tracking-[0.2em] uppercase mb-3">Pourquoi Tiki Boat</p>
-              <h2 className="font-display font-black text-white text-3xl sm:text-4xl mb-4 leading-tight">
+              <h2 className="font-display font-black text-slate-800 text-3xl sm:text-4xl mb-4 leading-tight">
                 Une expérience pensée dans les moindres détails
               </h2>
               <p className="text-white/50 text-base leading-relaxed mb-8">
@@ -140,12 +140,12 @@ export default async function HomePage() {
 
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                 {FEATURES.map(({ icon: Icon, label, desc }) => (
-                  <div key={label} className="flex flex-col items-center text-center gap-2.5 p-4 rounded-2xl bg-white/5 hover:bg-white/8 border border-white/8 hover:border-tiki-gold/30 transition-all group">
+                  <div key={label} className="flex flex-col items-center text-center gap-2.5 p-4 rounded-2xl bg-white/5 hover:bg-white/8 border border-slate-200 hover:border-tiki-gold/30 transition-all group">
                     <div className="w-10 h-10 rounded-xl bg-tiki-gold/15 flex items-center justify-center group-hover:bg-tiki-gold/25 transition-colors">
                       <Icon size={18} className="text-tiki-gold" />
                     </div>
                     <div>
-                      <div className="font-bold text-white text-xs mb-0.5 leading-tight">{label}</div>
+                      <div className="font-bold text-slate-800 text-xs mb-0.5 leading-tight">{label}</div>
                       <div className="text-white/40 text-xs leading-relaxed hidden sm:block">{desc}</div>
                     </div>
                   </div>
@@ -163,17 +163,17 @@ export default async function HomePage() {
       {/* ══════════════════════════════════════════
           EXCURSIONS
       ══════════════════════════════════════════ */}
-      <section className="bg-tiki-ocean py-16">
+      <section className="bg-sky-50 py-16">
         <div className="max-w-6xl mx-auto px-5 sm:px-8">
           <div className="text-center mb-14">
             <p className="text-tiki-lagon-light text-xs font-bold tracking-[0.2em] uppercase mb-3">Nos sorties en mer</p>
-            <h2 className="font-display font-black text-white text-3xl sm:text-4xl">
+            <h2 className="font-display font-black text-slate-800 text-3xl sm:text-4xl">
               Choisissez votre aventure
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {excursions.map((exc) => (
-              <div key={exc.id} className="relative bg-tiki-ocean-mid rounded-2xl overflow-hidden border border-white/8 hover:border-tiki-gold/30 hover:shadow-xl hover:shadow-black/30 transition-all duration-300 hover:-translate-y-1 group flex flex-col">
+              <div key={exc.id} className="relative bg-tiki-ocean-mid rounded-2xl overflow-hidden border border-slate-200 hover:border-tiki-gold/30 hover:shadow-xl hover:shadow-black/30 transition-all duration-300 hover:-translate-y-1 group flex flex-col">
                 {/* Overlay link — toute la carte pointe vers le détail */}
                 <Link href={`/excursions/${exc.slug}`} className="absolute inset-0 z-0" aria-label={exc.title} />
                 <div className="relative h-52 overflow-hidden">
@@ -193,10 +193,10 @@ export default async function HomePage() {
                   )}
                 </div>
                 <div className="p-5 flex flex-col flex-1">
-                  <h3 className="font-display font-black text-white text-lg leading-tight mb-1">{exc.title}</h3>
-                  <p className="text-tiki-cream-dark text-xs mb-2">{exc.duration}</p>
+                  <h3 className="font-display font-black text-slate-800 text-lg leading-tight mb-1">{exc.title}</h3>
+                  <p className="text-slate-500 text-xs mb-2">{exc.duration}</p>
                   <p className="text-white/50 text-sm leading-relaxed mb-5 flex-1 line-clamp-2">{exc.description}</p>
-                  <div className="relative z-10 flex items-center justify-between pt-4 border-t border-white/8">
+                  <div className="relative z-10 flex items-center justify-between pt-4 border-t border-slate-200">
                     <div>
                       {exc.pricePrivate ? (
                         <span className="text-tiki-gold font-black text-lg">Sur devis</span>
@@ -209,7 +209,7 @@ export default async function HomePage() {
                     </div>
                     <div className="flex items-center gap-2">
                       <Link href={`/excursions/${exc.slug}`}
-                        className="border border-white/20 text-white/60 hover:border-white/40 hover:text-white text-sm font-medium px-4 py-3 rounded-full transition-colors min-h-[44px] flex items-center">
+                        className="border border-white/20 text-white/60 hover:border-white/40 hover:text-slate-800 text-sm font-medium px-4 py-3 rounded-full transition-colors min-h-[44px] flex items-center">
                         Détails
                       </Link>
                       <Link href={exc.pricePrivate ? "/contact?type=privatisation" : `/reservation?excursion=${exc.slug}`}
@@ -231,12 +231,12 @@ export default async function HomePage() {
       {/* ══════════════════════════════════════════
           INCLUS
       ══════════════════════════════════════════ */}
-      <section className="bg-tiki-ocean-mid py-16">
+      <section className="bg-white py-16">
         <div className="max-w-5xl mx-auto px-5 sm:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <p className="text-tiki-lagon-light text-xs font-bold tracking-[0.2em] uppercase mb-3">Tout compris</p>
-              <h2 className="font-display font-black text-white text-3xl sm:text-4xl mb-6 leading-tight">
+              <h2 className="font-display font-black text-slate-800 text-3xl sm:text-4xl mb-6 leading-tight">
                 Zéro mauvaise<br />surprise.
               </h2>
               <p className="text-white/50 text-base leading-relaxed mb-8">
@@ -260,7 +260,7 @@ export default async function HomePage() {
                 ))}
               </ul>
             </div>
-            <div className="relative h-80 lg:h-[420px] rounded-2xl overflow-hidden border border-white/10 bg-tiki-ocean">
+            <div className="relative h-80 lg:h-[420px] rounded-2xl overflow-hidden border border-slate-200 bg-tiki-ocean">
               <SiteImage
                 src="/photos/bateau.jpg"
                 alt="Le Tiki Boat"
@@ -278,10 +278,10 @@ export default async function HomePage() {
       {/* ══════════════════════════════════════════
           LAGON
       ══════════════════════════════════════════ */}
-      <section className="bg-tiki-ocean py-16">
+      <section className="bg-sky-50 py-16">
         <div className="max-w-6xl mx-auto px-5 sm:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="relative h-72 lg:h-[420px] rounded-2xl overflow-hidden order-2 lg:order-1 border border-white/10">
+            <div className="relative h-72 lg:h-[420px] rounded-2xl overflow-hidden order-2 lg:order-1 border border-slate-200">
               <SiteImage
                 src="/photos/lagon.jpg"
                 alt="Vue aérienne du Grand Cul de Sac Marin"
@@ -291,7 +291,7 @@ export default async function HomePage() {
             </div>
             <div className="order-1 lg:order-2">
               <p className="text-tiki-gold text-xs font-bold tracking-[0.2em] uppercase mb-3">Notre terrain de jeu</p>
-              <h2 className="font-display font-black text-white text-3xl sm:text-4xl mb-6 leading-tight">
+              <h2 className="font-display font-black text-slate-800 text-3xl sm:text-4xl mb-6 leading-tight">
                 Le plus grand lagon<br />des Petites Antilles
               </h2>
               <p className="text-white/50 text-base leading-relaxed mb-8">
@@ -322,28 +322,28 @@ export default async function HomePage() {
       {/* ══════════════════════════════════════════
           AVIS
       ══════════════════════════════════════════ */}
-      <section className="bg-tiki-ocean-mid py-16">
+      <section className="bg-white py-16">
         <div className="max-w-6xl mx-auto px-5 sm:px-8">
           <div className="text-center mb-14">
             <p className="text-tiki-lagon-light text-xs font-bold tracking-[0.2em] uppercase mb-3">Avis clients</p>
-            <h2 className="font-display font-black text-white text-3xl sm:text-4xl mb-4">
+            <h2 className="font-display font-black text-slate-800 text-3xl sm:text-4xl mb-4">
               Ils l&apos;ont vécu
             </h2>
             <div className="flex items-center justify-center gap-1 mb-2">
               {[...Array(5)].map((_, i) => <Star key={i} size={18} className="text-tiki-gold fill-tiki-gold" />)}
-              <span className="ml-2 font-bold text-white">4.9</span>
+              <span className="ml-2 font-bold text-slate-800">4.9</span>
               <span className="text-white/35 text-sm ml-1">/ 5 · 600+ avis</span>
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {topReviews.map((review) => (
-              <div key={review.id} className="bg-tiki-ocean rounded-2xl p-6 border border-white/8 hover:border-tiki-gold/30 transition-all">
+              <div key={review.id} className="bg-white rounded-2xl p-6 border border-slate-200 hover:border-tiki-gold/30 transition-all">
                 <div className="flex items-center gap-1 mb-4">
                   {[...Array(review.rating)].map((_, i) => <Star key={i} size={13} className="text-tiki-gold fill-tiki-gold" />)}
                   <span className="ml-auto text-xs text-white/30 capitalize">{review.platform}</span>
                 </div>
                 <p className="text-white/65 text-sm leading-relaxed italic mb-5">&ldquo;{review.comment}&rdquo;</p>
-                <div className="pt-4 border-t border-white/8">
+                <div className="pt-4 border-t border-slate-200">
                   <div className="font-semibold text-tiki-gold text-sm">{review.author}</div>
                 </div>
               </div>
@@ -352,12 +352,12 @@ export default async function HomePage() {
           <div className="flex gap-4 justify-center mt-10">
             <a href="https://www.tripadvisor.fr/Attraction_Review-g644387-d23475410-Reviews-Tiki_Boat-Le_Gosier_Grande_Terre_Island_Guadeloupe.html"
               target="_blank" rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 border border-white/15 text-white/60 hover:border-tiki-gold hover:text-tiki-gold text-sm font-medium px-5 py-2.5 rounded-full transition-colors">
+              className="inline-flex items-center gap-2 border border-slate-200 text-white/60 hover:border-tiki-gold hover:text-tiki-gold text-sm font-medium px-5 py-2.5 rounded-full transition-colors">
               Tripadvisor
             </a>
             <a href="https://www.google.com/search?q=tiki+boat+guadeloupe+avis"
               target="_blank" rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 border border-white/15 text-white/60 hover:border-tiki-gold hover:text-tiki-gold text-sm font-medium px-5 py-2.5 rounded-full transition-colors">
+              className="inline-flex items-center gap-2 border border-slate-200 text-white/60 hover:border-tiki-gold hover:text-tiki-gold text-sm font-medium px-5 py-2.5 rounded-full transition-colors">
               Google Reviews
             </a>
           </div>
@@ -370,11 +370,11 @@ export default async function HomePage() {
       {/* ══════════════════════════════════════════
           TARIFS
       ══════════════════════════════════════════ */}
-      <section className="bg-tiki-ocean py-16">
+      <section className="bg-sky-50 py-16">
         <div className="max-w-4xl mx-auto px-5 sm:px-8">
           <div className="text-center mb-14">
             <p className="text-tiki-lagon-light text-xs font-bold tracking-[0.2em] uppercase mb-3">Tarifs</p>
-            <h2 className="font-display font-black text-white text-3xl sm:text-4xl mb-4">
+            <h2 className="font-display font-black text-slate-800 text-3xl sm:text-4xl mb-4">
               Transparent. Tout compris.
             </h2>
             <p className="text-white/40 max-w-md mx-auto text-sm">Acompte de 30% à la réservation — solde le jour J.</p>
@@ -384,11 +384,11 @@ export default async function HomePage() {
               <div className="absolute -top-3 left-6 bg-tiki-red text-white text-xs font-bold px-3 py-1 rounded-full">
                 Meilleure vente
               </div>
-              <h3 className="font-display font-black text-white text-xl mb-1">Croisière journée</h3>
+              <h3 className="font-display font-black text-slate-800 text-xl mb-1">Croisière journée</h3>
               <p className="text-white/35 text-xs mb-6">Grand Cul de Sac Marin — 08h00→17h00</p>
               <div className="space-y-3 mb-7">
                 {[["Adulte", "95 €"], ["Enfant 3–12 ans", "55 €"], ["Moins de 3 ans", "Gratuit"]].map(([l, p]) => (
-                  <div key={l} className="flex justify-between text-sm border-b border-white/8 pb-3 last:border-0 last:pb-0">
+                  <div key={l} className="flex justify-between text-sm border-b border-slate-200 pb-3 last:border-0 last:pb-0">
                     <span className="text-white/50">{l}</span>
                     <span className="font-bold text-tiki-gold">{p}</span>
                   </div>
@@ -399,12 +399,12 @@ export default async function HomePage() {
                 Réserver cette excursion <ChevronRight size={16} />
               </Link>
             </div>
-            <div className="border border-white/15 rounded-2xl p-7 bg-tiki-ocean-mid">
-              <h3 className="font-display font-black text-white text-xl mb-1">Privatisation</h3>
+            <div className="border border-slate-200 rounded-2xl p-7 bg-tiki-ocean-mid">
+              <h3 className="font-display font-black text-slate-800 text-xl mb-1">Privatisation</h3>
               <p className="text-white/35 text-xs mb-6">Anniversaire · EVJF · Mariage · Entreprise</p>
               <div className="space-y-3 mb-7">
                 {[["Journée privée", "dès 800 €"], ["Sunset privé", "dès 400 €"]].map(([l, p]) => (
-                  <div key={l} className="flex justify-between text-sm border-b border-white/8 pb-3 last:border-0 last:pb-0">
+                  <div key={l} className="flex justify-between text-sm border-b border-slate-200 pb-3 last:border-0 last:pb-0">
                     <span className="text-white/50">{l}</span>
                     <span className="font-bold text-tiki-gold">{p}</span>
                   </div>
@@ -425,9 +425,9 @@ export default async function HomePage() {
       {/* ══════════════════════════════════════════
           CTA FINAL — fond sombre, simple
       ══════════════════════════════════════════ */}
-      <section className="bg-tiki-ocean-mid py-16">
+      <section className="bg-white py-16">
         <div className="max-w-2xl mx-auto px-5 sm:px-8 text-center">
-          <h2 className="font-display font-black text-white text-3xl sm:text-4xl mb-4">
+          <h2 className="font-display font-black text-slate-800 text-3xl sm:text-4xl mb-4">
             Prêt pour le grand large ?
           </h2>
           <p className="text-white/50 text-base mb-10">
@@ -439,7 +439,7 @@ export default async function HomePage() {
               Réserver maintenant <ChevronRight size={18} />
             </Link>
             <a href="https://wa.me/590690495848" target="_blank" rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 border border-white/20 text-white/80 hover:text-white hover:border-white/40 font-medium py-4 px-8 rounded-full transition-all text-sm">
+              className="inline-flex items-center justify-center gap-2 border border-white/20 text-white/80 hover:text-slate-800 hover:border-white/40 font-medium py-4 px-8 rounded-full transition-all text-sm">
               WhatsApp
             </a>
           </div>

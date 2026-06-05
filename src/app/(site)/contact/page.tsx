@@ -11,7 +11,7 @@ export default function ContactPage() {
   return (
     <>
       {/* Header */}
-      <section className="pt-32 pb-16 bg-tiki-dark-2 relative overflow-hidden">
+      <section className="pt-32 pb-16 bg-sky-50 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-tiki-red/10 to-transparent" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 
@@ -36,20 +36,20 @@ export default function ContactPage() {
                       <Phone className="text-tiki-gold" size={22} />
                     </div>
                     <div>
-                      <div className="font-semibold text-tiki-cream group-hover:text-tiki-gold transition-colors">Téléphone & WhatsApp</div>
-                      <div className="text-tiki-cream-dark">+590 690 49 58 48</div>
-                      <div className="text-tiki-cream-dark text-xs mt-1">Réponse rapide sur WhatsApp</div>
+                      <div className="font-semibold text-slate-800 group-hover:text-tiki-gold transition-colors">Téléphone & WhatsApp</div>
+                      <div className="text-slate-500">+590 690 49 58 48</div>
+                      <div className="text-slate-500 text-xs mt-1">Réponse rapide sur WhatsApp</div>
                     </div>
                   </a>
                 </li>
                 <li>
-                  <a href="mailto:contact@tiki-boat.com" className="flex items-start gap-4 group">
+                  <a href="mailto:tikiboatguadeloupe@gmail.com" className="flex items-start gap-4 group">
                     <div className="w-12 h-12 bg-tiki-red/20 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-tiki-red/30 transition-colors">
                       <Mail className="text-tiki-gold" size={22} />
                     </div>
                     <div>
-                      <div className="font-semibold text-tiki-cream group-hover:text-tiki-gold transition-colors">Email</div>
-                      <div className="text-tiki-cream-dark">contact@tiki-boat.com</div>
+                      <div className="font-semibold text-slate-800 group-hover:text-tiki-gold transition-colors">Email</div>
+                      <div className="text-slate-500">tikiboatguadeloupe@gmail.com</div>
                     </div>
                   </a>
                 </li>
@@ -59,9 +59,9 @@ export default function ContactPage() {
                       <MapPin className="text-tiki-gold" size={22} />
                     </div>
                     <div>
-                      <div className="font-semibold text-tiki-cream">Zone géographique</div>
-                      <div className="text-tiki-cream-dark">Guadeloupe · Les Saintes · Marie-Galante</div>
-                      <div className="text-tiki-cream-dark text-xs mt-1">Départ : Marina de Pointe-à-Pitre / Le Gosier</div>
+                      <div className="font-semibold text-slate-800">Zone géographique</div>
+                      <div className="text-slate-500">Guadeloupe</div>
+                      <div className="text-slate-500 text-xs mt-1">Départ : Marina de Pointe-à-Pitre / Le Gosier</div>
                     </div>
                   </div>
                 </li>
@@ -71,8 +71,8 @@ export default function ContactPage() {
                       <Clock className="text-tiki-gold" size={22} />
                     </div>
                     <div>
-                      <div className="font-semibold text-tiki-cream">Disponibilité</div>
-                      <div className="text-tiki-cream-dark">7j/7 — Réponse sous 24h</div>
+                      <div className="font-semibold text-slate-800">Disponibilité</div>
+                      <div className="text-slate-500">7j/7 — Réponse sous 24h</div>
                     </div>
                   </div>
                 </li>

@@ -18,10 +18,13 @@ const config: Config = {
           gold: "#D4A017",
           "gold-light": "#F5D060",
           "gold-dark": "#A07810",
-          // Bleu nuit mer (nouveau fond)
+          // Bleu nuit mer (navbar, footer, hero)
           ocean: "#0A1E2E",
           "ocean-mid": "#0F2A3D",
           "ocean-light": "#163347",
+          // Sections claires
+          dark: "#ffffff",
+          "dark-2": "#f0f9ff",
           // Lagon turquoise
           lagon: "#0891B2",
           "lagon-light": "#06B6D4",
