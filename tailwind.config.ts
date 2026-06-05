@@ -26,9 +26,9 @@ const config: Config = {
           dark: "#ffffff",
           "dark-2": "#f0f9ff",
           // Lagon turquoise
-          lagon: "#0891B2",
-          "lagon-light": "#06B6D4",
-          "lagon-pale": "#E0F7FA",
+          lagon: "#0077b6",
+          "lagon-light": "#0096c7",
+          "lagon-pale": "#caf0f8",
           // Textes
           cream: "#E8F4F8",
           "cream-dark": "#A8C8D8",
