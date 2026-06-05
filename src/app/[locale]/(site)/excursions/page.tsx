@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import SiteImage from "@/components/SiteImage";
+import WaveDivider from "@/components/WaveDivider";
 import { ChevronRight, Clock, Users, MapPin } from "lucide-react";
 import { excursions } from "@/data/excursions";
 import { formatPrice } from "@/lib/utils";
@@ -105,6 +106,8 @@ export default function ExcursionsPage() {
         </div>
       </section>
 
+      <WaveDivider topColor="#f0f9ff" bottomColor="#ffffff" />
+
       {/* Excursions — 1 section sur 2 */}
       {excursions.map((exc, index) => (
         <section
@@ -205,7 +208,16 @@ export default function ExcursionsPage() {
             </div>
           </div>
         </section>
+        {index < excursions.length - 1 && (
+          <WaveDivider
+            topColor={index % 2 === 0 ? "#ffffff" : "#f0f9ff"}
+            bottomColor={index % 2 === 0 ? "#f0f9ff" : "#ffffff"}
+            flip={index % 2 === 1}
+          />
+        )}
       ))}
+
+      <WaveDivider topColor={excursions.length % 2 === 0 ? "#f0f9ff" : "#ffffff"} bottomColor="#ffffff" />
 
       {/* FAQ */}
       <section className="py-16 bg-white">
