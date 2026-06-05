@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import "../globals.css";
 
-const BASE = "https://tiki-boat.com";
+const BASE = "https://tikiboat.fr";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE),
@@ -14,6 +14,14 @@ export const metadata: Metadata = {
     template: "%s | Tiki Boat Guadeloupe",
   },
   icons: { icon: "/favicon.png", shortcut: "/favicon.png", apple: "/favicon.png" },
+  alternates: {
+    canonical: BASE,
+    languages: {
+      "fr": BASE,
+      "en": `${BASE}/en`,
+    },
+  },
+  twitter: { site: "@tikiboatguadeloupe" },
 };
 
 const organizationJsonLd = {

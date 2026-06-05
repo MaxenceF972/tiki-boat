@@ -4,6 +4,8 @@ import { Star, Shield, ExternalLink, ChevronRight } from "lucide-react";
 import { reviews } from "@/data/reviews";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://tikiboat.fr/avis" },
+  openGraph: { url: "https://tikiboat.fr/avis", type: "website" },
   title: "Avis clients",
   description: "Découvrez les avis de nos clients sur Tiki Boat. Plus de 100 avis vérifiés Google et Tripadvisor.",
 };
@@ -23,7 +25,7 @@ export default function AvisPage() {
             ))}
             <span className="text-slate-800 font-bold text-3xl ml-2">4.9/5</span>
           </div>
-          <p className="text-slate-500 text-lg">Basé sur 400+ avis Google & 200+ avis Tripadvisor</p>
+          <p className="text-slate-500 text-lg">Basé sur 600+ avis vérifiés Google & Tripadvisor</p>
         </div>
       </section>
 

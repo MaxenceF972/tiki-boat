@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import BookingForm from "@/components/BookingForm";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://tikiboat.fr/reservation" },
+  openGraph: { url: "https://tikiboat.fr/reservation", type: "website" },
   title: "Réserver une excursion",
   description:
     "Réservez votre excursion Tiki Boat en ligne. Paiement sécurisé, confirmation instantanée par email.",

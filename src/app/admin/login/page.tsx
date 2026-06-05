@@ -54,7 +54,7 @@ export default function AdminLoginPage() {
               <label className="block text-white/60 text-sm mb-1.5">Email</label>
               <input type="email" required value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="admin@tiki-boat.com"
+                placeholder="admin@tikiboat.fr"
                 className="w-full bg-tiki-ocean border border-white/15 focus:border-tiki-gold rounded-xl px-4 py-3 text-white placeholder-white/25 outline-none transition-colors" />
             </div>
             <div>

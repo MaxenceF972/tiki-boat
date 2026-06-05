@@ -9,7 +9,7 @@ import type { Section } from "@/data/blog";
 
 export const dynamic = "force-dynamic";
 
-const BASE = "https://tiki-boat.com";
+const BASE = "https://tikiboat.fr";
 
 interface Props { params: Promise<{ slug: string }> }
 

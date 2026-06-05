@@ -5,7 +5,7 @@ import { ChevronRight, Clock, Users, MapPin } from "lucide-react";
 import { excursions } from "@/data/excursions";
 import { formatPrice } from "@/lib/utils";
 
-const BASE = "https://tiki-boat.com";
+const BASE = "https://tikiboat.fr";
 
 export const metadata: Metadata = {
   title: "Excursions en bateau en Guadeloupe — Croisières & Sorties mer",

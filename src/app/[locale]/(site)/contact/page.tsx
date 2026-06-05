@@ -3,6 +3,8 @@ import ContactForm from "@/components/ContactForm";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://tikiboat.fr/contact" },
+  openGraph: { url: "https://tikiboat.fr/contact", type: "website" },
   title: "Contact",
   description: "Contactez Tiki Boat pour réserver votre excursion en Guadeloupe ou obtenir des informations.",
 };

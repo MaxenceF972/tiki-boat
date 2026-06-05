@@ -6,10 +6,10 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/admin/", "/api/", "/reservation/confirmation"],
+        disallow: ["/admin/", "/api/", "/reservation/confirmation", "/blog"],
       },
     ],
-    sitemap: "https://tiki-boat.com/sitemap.xml",
-    host: "https://tiki-boat.com",
+    sitemap: "https://tikiboat.fr/sitemap.xml",
+    host: "https://tikiboat.fr",
   };
 }

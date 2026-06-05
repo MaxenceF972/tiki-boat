@@ -1,68 +1,33 @@
 import type { MetadataRoute } from "next";
 import { excursions } from "@/data/excursions";
-import { blogPosts } from "@/data/blog";
 
-const BASE = "https://tiki-boat.com";
+const BASE = "https://tikiboat.fr";
+
+function urls(path: string) {
+  return [
+    BASE + path,
+    BASE + "/en" + path,
+  ];
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const excursionUrls: MetadataRoute.Sitemap = excursions.map((e) => ({
-    url: `${BASE}/excursions/${e.slug}`,
-    lastModified: new Date(),
-    changeFrequency: "weekly",
-    priority: 0.9,
-  }));
-
-  const blogUrls: MetadataRoute.Sitemap = blogPosts.map((p) => ({
-    url: `${BASE}/blog/${p.slug}`,
-    lastModified: new Date(p.date),
-    changeFrequency: "monthly" as const,
-    priority: 0.7,
-  }));
-
-  return [
-    {
-      url: BASE,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 1,
-    },
-    {
-      url: `${BASE}/excursions`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.95,
-    },
-    ...excursionUrls,
-    {
-      url: `${BASE}/reservation`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${BASE}/avis`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.75,
-    },
-    {
-      url: `${BASE}/galerie`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.65,
-    },
-    {
-      url: `${BASE}/contact`,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 0.6,
-    },
-    {
-      url: `${BASE}/blog`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    ...blogUrls,
+  const staticPages: MetadataRoute.Sitemap = [
+    ...urls("/").map(u => ({ url: u, lastModified: new Date(), changeFrequency: "weekly" as const, priority: 1 })),
+    ...urls("/excursions").map(u => ({ url: u, lastModified: new Date(), changeFrequency: "weekly" as const, priority: 0.95 })),
+    ...urls("/reservation").map(u => ({ url: u, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.9 })),
+    ...urls("/avis").map(u => ({ url: u, lastModified: new Date(), changeFrequency: "weekly" as const, priority: 0.75 })),
+    ...urls("/galerie").map(u => ({ url: u, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.65 })),
+    ...urls("/contact").map(u => ({ url: u, lastModified: new Date(), changeFrequency: "yearly" as const, priority: 0.6 })),
   ];
+
+  const excursionPages: MetadataRoute.Sitemap = excursions.flatMap((e) =>
+    urls("/excursions/" + e.slug).map(u => ({
+      url: u,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.9,
+    }))
+  );
+
+  return [...staticPages, ...excursionPages];
 }

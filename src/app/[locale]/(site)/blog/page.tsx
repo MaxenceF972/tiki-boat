@@ -11,11 +11,12 @@ export const metadata: Metadata = {
   title: "Blog — Conseils excursions en Guadeloupe",
   description:
     "Conseils, guides et inspiration pour vos excursions en bateau en Guadeloupe. Snorkeling, îlets, Grand Cul de Sac Marin, activités en famille.",
-  alternates: { canonical: "https://tiki-boat.com/blog" },
+  robots: { index: false, follow: false }, // noindex tant que pas d'articles
+  alternates: { canonical: "https://tikiboat.fr/blog" },
   openGraph: {
     title: "Blog Tiki Boat — Conseils excursions en Guadeloupe",
     description: "Guides et conseils pour vos excursions en mer en Guadeloupe.",
-    url: "https://tiki-boat.com/blog",
+    url: "https://tikiboat.fr/blog",
     type: "website",
   },
 };

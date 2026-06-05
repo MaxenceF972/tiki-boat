@@ -7,7 +7,7 @@ import { Clock, Users, MapPin, CheckCircle2, XCircle, ChevronRight, CalendarDays
 import { excursions, getExcursionBySlug } from "@/data/excursions";
 import { formatPrice } from "@/lib/utils";
 
-const BASE = "https://tiki-boat.com";
+const BASE = "https://tikiboat.fr";
 
 interface Props {
   params: Promise<{ slug: string; locale: string }>;
@@ -217,7 +217,7 @@ export default async function ExcursionDetailPage({ params }: Props) {
                     {[...Array(5)].map((_, i) => <Star key={i} className="text-tiki-gold fill-tiki-gold" size={14} />)}
                     <span className="text-slate-800 text-sm font-bold ml-1">4.8/5</span>
                   </div>
-                  <p className="text-center text-slate-500 text-xs mt-1">400+ avis</p>
+                  <p className="text-center text-slate-500 text-xs mt-1">600+ avis</p>
                 </div>
               </div>
             </div>

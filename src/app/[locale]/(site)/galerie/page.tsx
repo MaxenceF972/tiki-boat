@@ -3,6 +3,8 @@ import SiteImage from "@/components/SiteImage";
 import { Play } from "lucide-react";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://tikiboat.fr/galerie" },
+  openGraph: { url: "https://tikiboat.fr/galerie", type: "website" },
   title: "Galerie photos & vidéos",
   description: "Découvrez en images les excursions Tiki Boat en Guadeloupe. Photos et vidéos des îlets, du snorkeling, et du repas créole.",
 };

@@ -2,9 +2,9 @@ import { Resend } from "resend";
 import { excursions } from "@/data/excursions";
 
 const resend   = new Resend(process.env.RESEND_API_KEY);
-const FROM     = "Tiki Boat <onboarding@resend.dev>"; // TODO → reservations@tiki-boat.com après vérif domaine
+const FROM     = "Tiki Boat <onboarding@resend.dev>"; // TODO → reservations@tikiboat.fr après vérif domaine
 const ADMIN    = process.env.ADMIN_EMAIL_NOTIF ?? "tikiboatguadeloupe@gmail.com";
-const SITE_URL = "https://tiki-boat-iota.vercel.app"; // TODO → https://tiki-boat.com
+const SITE_URL = "https://tiki-boat-iota.vercel.app"; // TODO → https://tikiboat.fr
 
 const LOGO = "https://raw.githubusercontent.com/MaxenceF972/tiki-boat/main/public/logo.png";
 
@@ -54,7 +54,7 @@ function generateICS(data: ReservationData, exc: typeof excursions[0] | undefine
     `SUMMARY:Tiki Boat — ${data.excursionTitle}`,
     `DESCRIPTION:${data.excursionTitle}\\nPassagers : ${data.adults + (data.children ?? 0)} pers.\\nContact : +590 690 49 58 48`,
     `LOCATION:${exc?.departurePoint ?? "Marina de Pointe-à-Pitre"}, Guadeloupe`,
-    `URL:https://tiki-boat.com`,
+    `URL:https://tikiboat.fr`,
     "STATUS:CONFIRMED",
     "END:VEVENT", "END:VCALENDAR",
   ].join("\r\n");
@@ -260,7 +260,7 @@ export async function sendAdminNotification(data: ReservationData) {
 
   <!-- Footer -->
   <tr><td style="background:#e2e8f0;border-radius:0 0 14px 14px;padding:12px 24px;text-align:center;">
-    <p style="font-size:11px;color:#94a3b8;margin:0;">Tiki Boat Administration · tiki-boat.com</p>
+    <p style="font-size:11px;color:#94a3b8;margin:0;">Tiki Boat Administration · tikiboat.fr</p>
   </td></tr>
 
 </table>
