@@ -17,6 +17,13 @@ export interface Excursion {
   included: string[];
   notIncluded: string[];
   highlights: string[];
+  // English content
+  subtitleEn?: string;
+  descriptionEn?: string;
+  highlightsEn?: string[];
+  includedEn?: string[];
+  notIncludedEn?: string[];
+  durationEn?: string;
   images: string[];
   youtubeId?: string;
   badge?: string;

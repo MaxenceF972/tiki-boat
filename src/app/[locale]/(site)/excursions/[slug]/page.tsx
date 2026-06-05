@@ -31,14 +31,23 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function ExcursionDetailPage({ params }: Props) {
-  const { slug } = await params;
+  const { slug, locale } = await params;
   const excursion = getExcursionBySlug(slug);
   if (!excursion) notFound();
 
   const t = await getTranslations("excursionDetail");
+  const isEn = locale === "en";
+
+  // Contenu localisé
+  const subtitle   = isEn ? (excursion.subtitleEn   ?? excursion.subtitle)   : excursion.subtitle;
+  const description = isEn ? (excursion.descriptionEn ?? excursion.description) : excursion.description;
+  const duration   = isEn ? (excursion.durationEn   ?? excursion.duration)   : excursion.duration;
+  const highlights = isEn ? (excursion.highlightsEn ?? excursion.highlights) : excursion.highlights;
+  const included   = isEn ? (excursion.includedEn   ?? excursion.included)   : excursion.included;
+  const notIncluded = isEn ? (excursion.notIncludedEn ?? excursion.notIncluded) : excursion.notIncluded;
 
   const metaCards = [
-    { icon: Clock,       label: t("duree"),       value: excursion.duration },
+    { icon: Clock,       label: t("duree"),       value: duration },
     { icon: CalendarDays,label: t("heureDepart"), value: excursion.departureTime },
     { icon: Users,       label: t("capacite"),    value: `Max ${excursion.maxPassengers}` },
     { icon: MapPin,      label: t("pointRdv"),    value: excursion.departurePoint.split("/")[0].trim() },
@@ -56,7 +65,7 @@ export default async function ExcursionDetailPage({ params }: Props) {
             <div className="max-w-7xl mx-auto">
               {excursion.badge && <div className="badge mb-3 inline-block">{excursion.badge}</div>}
               <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-2 drop-shadow-lg">{excursion.title}</h1>
-              <p className="text-white/80 text-xl drop-shadow">{excursion.subtitle}</p>
+              <p className="text-white/80 text-xl drop-shadow">{subtitle}</p>
             </div>
           </div>
         </div>
@@ -84,14 +93,14 @@ export default async function ExcursionDetailPage({ params }: Props) {
               {/* Description */}
               <div>
                 <h2 className="font-display text-2xl font-bold text-tiki-gold mb-4">{t("lexperience")}</h2>
-                <p className="text-slate-800 leading-relaxed text-lg">{excursion.description}</p>
+                <p className="text-slate-800 leading-relaxed text-lg">{description}</p>
               </div>
 
               {/* Highlights */}
               <div>
                 <h2 className="font-display text-2xl font-bold text-tiki-gold mb-4">{t("auProgramme")}</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {excursion.highlights.map((h) => (
+                  {highlights.map((h) => (
                     <div key={h} className="flex items-center gap-3 text-slate-800">
                       <CheckCircle2 className="text-tiki-gold shrink-0" size={18} />
                       {h}
@@ -105,7 +114,7 @@ export default async function ExcursionDetailPage({ params }: Props) {
                 <div>
                   <h3 className="font-bold text-slate-800 text-lg mb-4">{t("toutCompris")}</h3>
                   <ul className="space-y-2">
-                    {excursion.included.map((item) => (
+                    {included.map((item) => (
                       <li key={item} className="flex items-start gap-2 text-slate-800 text-sm">
                         <CheckCircle2 className="text-green-400 shrink-0 mt-0.5" size={16} />
                         {item}
@@ -116,7 +125,7 @@ export default async function ExcursionDetailPage({ params }: Props) {
                 <div>
                   <h3 className="font-bold text-slate-800 text-lg mb-4">{t("nonInclus")}</h3>
                   <ul className="space-y-2">
-                    {excursion.notIncluded.map((item) => (
+                    {notIncluded.map((item) => (
                       <li key={item} className="flex items-start gap-2 text-slate-500 text-sm">
                         <XCircle className="text-tiki-red-light shrink-0 mt-0.5" size={16} />
                         {item}
@@ -151,7 +160,7 @@ export default async function ExcursionDetailPage({ params }: Props) {
                     </div>
                     <div className="space-y-3 mb-6 text-sm text-slate-500">
                       <div className="flex justify-between">
-                        <span>{t("duree")}</span><span className="text-slate-800">{excursion.duration}</span>
+                        <span>{t("duree")}</span><span className="text-slate-800">{duration}</span>
                       </div>
                       <div className="flex justify-between">
                         <span>{t("capaciteLabel")}</span><span className="text-slate-800">Max {excursion.maxPassengers}</span>
@@ -186,7 +195,7 @@ export default async function ExcursionDetailPage({ params }: Props) {
                     </div>
                     <div className="space-y-3 mb-6 text-sm text-slate-500 border-t border-tiki-gold/20 pt-4">
                       <div className="flex justify-between">
-                        <span>{t("duree")}</span><span className="text-slate-800">{excursion.duration}</span>
+                        <span>{t("duree")}</span><span className="text-slate-800">{duration}</span>
                       </div>
                       <div className="flex justify-between">
                         <span>{t("depart")}</span><span className="text-slate-800">{excursion.departureTime}</span>
