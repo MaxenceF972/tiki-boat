@@ -34,24 +34,43 @@
   },
   "home": {
     "hero": {
-      "title": "An {highlight} day at sea in Guadeloupe.",
-      "highlight": "unforgettable",
       "subtitle": "Snorkeling, wild islets and a Creole meal with your feet in the water. A unique experience in the Grand Cul de Sac Marin.",
       "cta": "Book now",
       "ourExcursions": "Our excursions",
-      "perAdult": "/ adult"
+      "perAdult": "/ adult",
+      "title1": "An ",
+      "titleHighlight": "unforgettable",
+      "title2": " day at sea in Guadeloupe."
     },
     "features": {
       "badge": "Why Tiki Boat",
       "title": "An experience crafted down to the last detail",
       "subtitle": "On board the Tiki Boat, everything is taken care of so you can fully enjoy your day — from boarding to return.",
       "items": {
-        "securite": { "label": "Certified safety", "desc": "Licensed captain, approved equipment" },
-        "comite": { "label": "Small group", "desc": "Maximum 12 passengers per trip" },
-        "snorkeling": { "label": "Snorkeling included", "desc": "Mask, snorkel and fins on board" },
-        "adapte": { "label": "Suitable for all", "desc": "Babies, children, seniors — everyone" },
-        "repas": { "label": "Creole meal included", "desc": "Chef on board, 100% fresh produce" },
-        "bar": { "label": "Unique floating bar", "desc": "Original and unique in Guadeloupe" }
+        "securite": {
+          "label": "Certified safety",
+          "desc": "Licensed captain, approved equipment"
+        },
+        "comite": {
+          "label": "Small group",
+          "desc": "Maximum 12 passengers per trip"
+        },
+        "snorkeling": {
+          "label": "Snorkeling included",
+          "desc": "Mask, snorkel and fins on board"
+        },
+        "adapte": {
+          "label": "Suitable for all",
+          "desc": "Babies, children, seniors — everyone"
+        },
+        "repas": {
+          "label": "Creole meal included",
+          "desc": "Chef on board, 100% fresh produce"
+        },
+        "bar": {
+          "label": "Unique floating bar",
+          "desc": "Original and unique in Guadeloupe"
+        }
       }
     },
     "excursions": {
@@ -135,10 +154,22 @@
     "faq": {
       "title": "Frequently asked questions",
       "items": [
-        { "q": "Is the meal included in the price?", "a": "Yes! The full-day cruise includes a Creole aperitif and a full meal prepared by our chef with 100% fresh produce." },
-        { "q": "Is it suitable for children and elderly people?", "a": "Absolutely. Tiki Boat is designed for all ages, from babies to seniors. The boat is stable and safe." },
-        { "q": "What happens in bad weather?", "a": "In the event of unfavourable weather conditions, the trip is postponed or fully refunded. Your safety comes first." },
-        { "q": "How can I book?", "a": "Online on this website (secure payment), by WhatsApp at +590 690 49 58 48, or by phone." }
+        {
+          "q": "Is the meal included in the price?",
+          "a": "Yes! The full-day cruise includes a Creole aperitif and a full meal prepared by our chef with 100% fresh produce."
+        },
+        {
+          "q": "Is it suitable for children and elderly people?",
+          "a": "Absolutely. Tiki Boat is designed for all ages, from babies to seniors. The boat is stable and safe."
+        },
+        {
+          "q": "What happens in bad weather?",
+          "a": "In the event of unfavourable weather conditions, the trip is postponed or fully refunded. Your safety comes first."
+        },
+        {
+          "q": "How can I book?",
+          "a": "Online on this website (secure payment), by WhatsApp at +590 690 49 58 48, or by phone."
+        }
       ]
     }
   },
